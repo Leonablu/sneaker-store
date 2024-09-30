@@ -146,7 +146,6 @@ export const loginUser = async (data: TLoginData): Promise<TAuthResponse> => {
 
   const loginData = await checkResponse<TAuthResponse>(response);
 
-  // Установка токенов после успешной авторизации
   setTokens(loginData.accessToken, loginData.refreshToken);
 
   return loginData;
@@ -191,7 +190,7 @@ export const fetchWithRefresh = async <T>(
 };
 
 // Получение информации о текущем пользователе
-export const getUser = (): Promise<TUserResponse> =>
+export const getUser = async (): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
     headers: {
       authorization: getAccessToken()
@@ -199,7 +198,7 @@ export const getUser = (): Promise<TUserResponse> =>
   });
 
 // Обновление информации о текущем пользователе
-export const updateUser = (
+export const updateUser = async (
   user: Partial<TRegisterData>
 ): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
@@ -680,7 +679,7 @@ export const deletePostsID = async (id: string): Promise<TPostsResponse> => {
     throw error;
   }
 };
-// Добавление статьи из избранного
+// Добавление статьи в избранное
 export const addFavoritePost = async (id: string): Promise<TFavoritePost> => {
   try {
     const response = await fetch(`${API_URL}/posts/${id}/favorite`, {
