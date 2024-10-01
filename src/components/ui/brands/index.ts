@@ -1,0 +1,1 @@
+export { BrandsUI } from './brands';
