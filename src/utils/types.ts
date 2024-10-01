@@ -46,12 +46,11 @@ export type TServerResponse<T> = {
     email: string;
   }>;
   
-  // Тип ответа сервера при получении списка продуктов
 export type TProductResponse = TServerResponse<{
     products: TProduct[];
     length: number;
   }>;
-  // Тип ответа сервера при получении списка постов
+  
  export  type TPostsResponse = TServerResponse<{
     posts: TPost[];
     total: number;
