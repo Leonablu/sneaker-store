@@ -1,18 +1,18 @@
-@import url('../../styles/variables');
+@import url(../../styles/_variables.scss);
 
 .app {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: column;
   background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
 }
 
 h1 {
   color: $text-accent-color;
   font-size: $h1-font-size;
-  line-height: 88px;
-  font-weight: 700;
   font-style: normal;
+  font-weight: 700;
+  line-height: 88px;
 }

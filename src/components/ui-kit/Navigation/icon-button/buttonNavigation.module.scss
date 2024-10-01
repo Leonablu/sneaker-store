@@ -1,9 +1,9 @@
-@import url('../../../styles/variables');
+@import url(../../../../styles/_variables.scss);
 
 .buttonNav{
     background-color: black;
-    width: 44px;
     height: 44px;
+    width: 44px;
 
     &:hover {
       background: rgb(127 127 127);
