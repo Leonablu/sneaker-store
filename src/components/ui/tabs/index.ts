@@ -1,1 +1,0 @@
-export { TabsUI } from './tabs';

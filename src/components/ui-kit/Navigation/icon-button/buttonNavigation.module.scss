@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.buttonNav{
+    background-color: black;
+    width: 44px;
+    height: 44px;
+    &:hover {
+      background: rgba(127, 127, 127);
+    }
+  }

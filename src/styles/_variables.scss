@@ -1,0 +1,19 @@
+$h1-font-size: clamp(1.25rem, 0.1667rem + 4.8148vw, 4.5rem); // с 20px до 72px
+$h2-font-size: clamp(2.0625rem, 1.5rem + 2.5vw, 3.75rem);//c 18px до 48px
+$card-description-font-size: clamp(0.625rem, 0.5417rem + 0.3704vw, 0.875rem);//c 10px до 14px
+$benefit-font-size: clamp(0.6875rem, 0.1667rem + 2.3148vw, 2.25rem); //c 11px до 36px
+$link-font-size: clamp(0.875rem, 0.6667rem + 0.9259vw, 1.5rem); //c 14px до 24px
+$contacts-font-size: clamp(0.5rem, 0.2917rem + 0.9259vw, 1.125rem); //c 8px до 18px 
+
+$main-font: 'Montserrat', sans-serif;
+$text-font: 'Ruda', sans-serif;
+$text-color: rgba(0, 0, 0, 1);
+$text-accent-color: rgba(0, 44, 106, 1);
+
+$main-color: rgba(255, 255, 255, 1);
+$accent-color: rgba(255, 24, 24, 1);
+$hover: rgba(255, 66, 24, 1);
+$disabled: rgba(179, 192, 210, 1);
+$shadow-button: 0px 15px 30px 0px rgba(227, 47, 31, 0.15);
+$shadow-card: 5px 15px 32px 0px rgba(22, 92, 191, 0.2);
+
