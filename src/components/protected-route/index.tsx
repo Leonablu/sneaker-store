@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from '../../services/store';
-import { Preloader } from '../ui/preloader';
+import { Preloader } from '../ui/skeleton';
 
 type TProtectedRouteType = 'auth' | 'unauth';
 
