@@ -1,5 +1,5 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 export const BlogItem: FC = (blogItem) => {
-    return <></>
-}
+  return <></>;
+};

@@ -3,6 +3,4 @@ import styles from './counter.module.scss';
 
 // счетчик в корзине
 
-export const Counter: FC = () => 
-<>
-</>
+export const Counter: FC = () => <></>;

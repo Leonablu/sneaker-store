@@ -1,11 +1,13 @@
 import {
   TCategories,
+  TCreatePostData,
   TFavoritePost,
   TOrder,
   TOrderItem,
   TPost,
   TProduct,
-  TQueryParams
+  TQueryParams,
+  TUpdatePost
 } from '../types';
 import { deleteCookie, getCookie, setCookie } from './cookie';
 import {
@@ -225,7 +227,14 @@ export const getProducts = async (): Promise<TProduct[]> =>
 export const getFilteredProductsApi = async (
   params: TQueryParams
 ): Promise<TProductResponse> => {
-  const query = new URLSearchParams(params).toString();
+  const filteredParams = Object.fromEntries(
+    Object.entries(params).filter(
+      ([_, value]) => value !== undefined && value !== ''
+    )
+  );
+
+  const query = new URLSearchParams(filteredParams).toString();
+
   return fetchWithRefresh<TProductResponse>(`${API_URL}/products?${query}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' } as HeadersInit
@@ -300,15 +309,13 @@ export const getProductByID = async (id: string): Promise<TProduct> => {
 // Обновление товара по ID
 export const updateProductByID = async (
   id: string,
-  productData: Partial<TProduct>
+  productData: { name: string; categoryId: number } & Partial<
+    Omit<TProduct, 'name' | 'categoryId'>
+  >
 ): Promise<TProduct> => {
   try {
     const token = getAccessToken();
     if (!token) throw new Error('Пользователь не авторизован');
-
-    if (!productData.name || !productData.categoryId) {
-      throw new Error('Поля name и categoryId являются обязательными');
-    }
 
     const response = await fetch(`${API_URL}/products/${id}`, {
       method: 'PUT',
@@ -433,7 +440,7 @@ export const fetchCategories = async (): Promise<TCategories> =>
     });
 // Создание новой категории
 export const createCategory = async (
-  categoryData: Partial<TCategories>
+  name: string
 ): Promise<TCategoriesResponse> => {
   try {
     const token = getAccessToken();
@@ -445,7 +452,7 @@ export const createCategory = async (
         'Content-Type': 'application/json',
         Authorization: token
       },
-      body: JSON.stringify(categoryData)
+      body: JSON.stringify({ name })
     });
 
     return await checkResponse<TCategoriesResponse>(response);
@@ -515,7 +522,7 @@ export const updateCategoryById = async (
   }
 };
 // Удаление категории по ID
-export const deleteCategoriesID = async (
+export const deleteCategoryById = async (
   id: string
 ): Promise<TCategoriesResponse> => {
   try {
@@ -544,7 +551,9 @@ export const getFilteredPostApi = async (
   });
 };
 // Создание новой поста
-export const createPosts = async (postData: Partial<TPost>): Promise<TPost> => {
+export const createPosts = async (
+  postData: TCreatePostData
+): Promise<TPost> => {
   try {
     const token = getAccessToken();
     if (!token) throw new Error('Пользователь не авторизован');
@@ -598,15 +607,11 @@ export const getPostsById = async (id: string): Promise<TPostsResponse> => {
 // Обновление поста по ID
 export const updatePostsById = async (
   id: string,
-  posts: Partial<TPost>
+  posts: TUpdatePost
 ): Promise<TPostsResponse> => {
   try {
     const token = getAccessToken();
     if (!token) throw new Error('Пользователь не авторизован');
-
-    if (!posts.title) {
-      throw new Error('Title являются обязательным');
-    }
 
     const response = await fetch(`${API_URL}/posts/${id}`, {
       method: 'PUT',
