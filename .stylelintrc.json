@@ -18,7 +18,7 @@
       "length-zero-no-unit": true,
       "font-family-name-quotes": "always-where-required",
       "function-url-quotes": "never",
-      "import-notation": "url",
+      "import-notation": "string",
       "shorthand-property-no-redundant-values": true,
       "declaration-no-important": true,
       "declaration-block-single-line-max-declarations": 1,

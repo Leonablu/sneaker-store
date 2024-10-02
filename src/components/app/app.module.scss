@@ -1,8 +1,7 @@
-@import url(../../styles/_variables.scss);
+@import '../../styles/variables';
 
 .app {
   align-items: center;
-  background-color: $main-color;
   display: flex;
   flex-direction: column;
   height: 100vh;
