@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const CatalogPage: FC = () => {
+export const BlogItemPage: FC = () => {
   return (
     <>
     

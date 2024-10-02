@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const TrackOrderPage: FC = () => {
+export const BlogPage: FC = () => {
   return (
     <>
     
