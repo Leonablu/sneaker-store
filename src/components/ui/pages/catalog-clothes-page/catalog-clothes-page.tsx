@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const TrackOrderPage: FC = () => {
+export const CatalogClothesPageUI: FC = () => {
   return <></>;
 };

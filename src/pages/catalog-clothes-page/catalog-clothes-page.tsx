@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const CatalogPage: FC = () => {
+export const CatalogClothesPage: FC = () => {
   return <></>;
 };
