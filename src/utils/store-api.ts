@@ -7,7 +7,8 @@ import {
   TPost,
   TProduct,
   TQueryParams,
-  TUpdatePost
+  TUpdatePost,
+  TUserUpdate
 } from '../types';
 import { deleteCookie, getCookie, setCookie } from './cookie';
 import {
@@ -163,7 +164,7 @@ export const getUser = (): Promise<TUserResponse> =>
 
 // Обновление информации о текущем пользователе
 export const updateUser = (
-  user: Partial<TRegisterData>
+  user: Partial<TUserUpdate>
 ): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
     method: 'PATCH',
@@ -243,7 +244,15 @@ export const getFilteredProductsApi = async (
 
 // Создание нового продукта
 export const createProduct = async (
-  productData: Partial<TProduct>
+  productData: {
+    name: string;
+    description: string;
+    price: number;
+    images: string;
+    categoryId: number;
+  } & Partial<
+    Omit<TProduct, 'name' | 'description' | 'price' | 'images' | 'categoryId'>
+  >
 ): Promise<TProduct> => {
   try {
     const token = getAccessToken();

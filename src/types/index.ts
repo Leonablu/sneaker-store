@@ -16,6 +16,16 @@ export type TUser = {
   favoritesPost: TPost[];
 };
 
+export type TUserUpdate = {
+  email?: string;
+  name?: string;
+  avatarPath?: string;
+  about?: string;
+  phone?: string;
+  roles?: string[];
+  password?: string;
+};
+
 export type TLike = {
   id: string;
   userId: string;
