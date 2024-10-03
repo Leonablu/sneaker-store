@@ -1,9 +1,5 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 export const BasketPage: FC = () => {
-  return (
-    <>
-    
-    </>
-  );
+  return <></>;
 };

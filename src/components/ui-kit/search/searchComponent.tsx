@@ -2,9 +2,9 @@ import { FC } from 'react';
 import styles from './searchComponent.module.scss';
 // поисковая строка
 
-export const SearchComponent: FC = () => 
-<>
-{/* <Paper
+export const SearchComponent: FC = () => (
+  <>
+    {/* <Paper
         component='form'
         sx={{
           p: '11px 4px',
@@ -24,5 +24,5 @@ export const SearchComponent: FC = () =>
           <SearchIcon />
         </IconButton>
       </Paper> */}
-</>
-    
+  </>
+);

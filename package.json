@@ -1,7 +1,7 @@
 {
   "name": "sneaker-store",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,14 @@
     "format": "prettier ./src --write",
     "preview": "vite preview",
     "test": "jest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check": "npm run stylelint:fix && npm run lint && npm run format",
+    "commit": "npm run check && cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -40,6 +47,8 @@
     "@typescript-eslint/parser": "^6.15.0",
     "@vitejs/plugin-react": "^4.3.1",
     "babel-jest": "^29.7.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
@@ -55,6 +64,7 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "sass": "^1.79.3",
+    "standard-version": "^9.5.0",
     "stylelint": "^16.9.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
