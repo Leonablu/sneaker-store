@@ -4,8 +4,8 @@ export interface TOrderState {}
 
 export const initialState: TOrderState = {};
 
-const orderSlice = createSlice({
-  name: '',
+export const orderSlice = createSlice({
+  name: 'orders',
   initialState,
   reducers: {},
   selectors: {}

@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const CatalogClothesPage: FC = () => {
-  return <></>;
-};
+export const CatalogClothesPage: FC = () => <></>;

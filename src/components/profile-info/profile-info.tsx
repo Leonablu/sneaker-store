@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const ProfileInfo: FC = () => {
-  return <></>;
-};
+export const ProfileInfo: FC = () => <></>;

@@ -1,9 +1,3 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-export const RegisterPageUI: FC = () => {
-  return (
-    <>
-    
-    </>
-  );
-};
+export const RegisterPageUI: FC = () => <></>;

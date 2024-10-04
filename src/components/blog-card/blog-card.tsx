@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const BlogCard: FC = (blogItem) => {
-  return <></>;
-};
+export const BlogCard: FC = (blogItem) => <></>;

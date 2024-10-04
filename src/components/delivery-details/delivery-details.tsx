@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const DeliveryDetails: FC = () => {
-  return <></>;
-};
+export const DeliveryDetails: FC = () => <></>;

@@ -1,9 +1,3 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-export const CatalogShoesPage: FC = () => {
-  return (
-    <>
-    
-    </>
-  );
-};
+export const CatalogShoesPage: FC = () => <></>;

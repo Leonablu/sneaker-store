@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const ProductPage: FC = () => {
-  return <></>;
-};
+export const ProductPage: FC = () => <></>;

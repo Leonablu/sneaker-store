@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const Order: FC = () => {
-  return <></>;
-};
+export const Order: FC = () => <></>;

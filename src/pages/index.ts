@@ -9,3 +9,4 @@ export * from './main-page';
 export * from './product-page';
 export * from './profile-page';
 export * from './register-page';
+export * from './faq-page';

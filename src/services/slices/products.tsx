@@ -4,8 +4,8 @@ export type TProductsState = {};
 
 export const initialState: TProductsState = {};
 
-const productsSlice = createSlice({
-  name: '',
+export const productsSlice = createSlice({
+  name: 'products',
   initialState,
   reducers: {},
   selectors: {}
