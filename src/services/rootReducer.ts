@@ -5,8 +5,8 @@ import { productsSlice } from './slices/products';
 import { usersSlice } from './slices/users';
 
 export const rootReducer = combineReducers({
-  [categoriesSlice.name]: categoriesSlice.reducer,
-  [orderSlice.name]: orderSlice.reducer,
-  [productsSlice.name]: productsSlice.reducer,
-  [usersSlice.name]: usersSlice.reducer
+  categories: categoriesSlice.reducer,
+  order: orderSlice.reducer,
+  products: productsSlice.reducer,
+  users: usersSlice.reducer
 });
