@@ -9,6 +9,7 @@ import {
   CatalogAccessoriesPage,
   CatalogClothesPage,
   CatalogShoesPage,
+  FAQPage,
   LoginPage,
   MainPage,
   ProductPage,
@@ -16,7 +17,7 @@ import {
   RegisterPage
 } from '../../pages';
 import { ProtectedRoute } from '../protected-route';
-import { NotFound404 } from '../ui/pages/not-found-404';
+import { NotFound404 } from '../ui/pages';
 
 const App = () => {
   // const navigate = useNavigate();
@@ -36,6 +37,7 @@ const App = () => {
           <Route path='/blog' element={<BlogPage />} />
           <Route path='/basket' element={<BasketPage />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='/FAQ' element={<FAQPage />} />
           <Route
             path='/profile'
             element={
