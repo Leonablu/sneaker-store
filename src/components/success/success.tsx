@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const Success: FC = () => {
-  return <></>;
-};
+export const Success: FC = () => <></>;

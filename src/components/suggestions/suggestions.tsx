@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const Suggestions: FC = () => {
-  return <></>;
-};
+export const Suggestions: FC = () => <></>;

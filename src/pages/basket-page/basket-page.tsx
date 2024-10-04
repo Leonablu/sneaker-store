@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const BasketPage: FC = () => {
-  return <></>;
-};
+export const BasketPage: FC = () => <></>;

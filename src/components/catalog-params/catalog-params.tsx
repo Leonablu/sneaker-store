@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const CatalogParams: FC = (params) => {
-  return <></>;
-};
+export const CatalogParams: FC = (params) => <></>;

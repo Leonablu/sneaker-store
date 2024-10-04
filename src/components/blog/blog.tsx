@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const Blog: FC = () => {
-  return <></>;
-};
+export const Blog: FC = () => <></>;

@@ -1,9 +1,3 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-export const BlogItemPage: FC = () => {
-  return (
-    <>
-    
-    </>
-  );
-};
+export const BlogItemPage: FC = () => <></>;

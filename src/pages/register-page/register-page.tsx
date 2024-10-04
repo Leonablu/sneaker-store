@@ -1,5 +1,3 @@
 import { FC } from 'react';
 
-export const RegisterPage: FC = () => {
-  return <></>;
-};
+export const RegisterPage: FC = () => <></>;

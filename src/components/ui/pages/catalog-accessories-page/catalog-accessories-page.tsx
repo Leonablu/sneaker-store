@@ -1,9 +1,3 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-export const CatalogAccessoriesPageUI: FC = () => {
-  return (
-    <>
-    
-    </>
-  );
-};
+export const CatalogAccessoriesPageUI: FC = () => <></>;

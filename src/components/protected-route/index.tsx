@@ -9,9 +9,7 @@ type ProtectedRouteProps = {
   type: TProtectedRouteType;
 };
 
-export const ProtectedRoute = ({ 
-  children, 
-  type }: ProtectedRouteProps) => {
+export const ProtectedRoute = ({ children, type }: ProtectedRouteProps) => {
   //   const { user, isAuthChecked, loading } = useSelector((state) => state.user);
   const user = null;
   const isAuthChecked = false;
