@@ -4,8 +4,8 @@ export interface TCategoriesState {}
 
 export const initialState: TCategoriesState = {};
 
-const categoriesSlice = createSlice({
-  name: '',
+export const categoriesSlice = createSlice({
+  name: 'categories',
   initialState,
   reducers: {},
   selectors: {}

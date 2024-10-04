@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from '../../services/store';
-import { Preloader } from '../ui/skeleton';
+import { SkeletonUI } from '../ui/skeleton';
 
 type TProtectedRouteType = 'auth' | 'unauth';
 
@@ -9,7 +9,9 @@ type ProtectedRouteProps = {
   type: TProtectedRouteType;
 };
 
-export const ProtectedRoute = ({ children, type }: ProtectedRouteProps) => {
+export const ProtectedRoute = ({ 
+  children, 
+  type }: ProtectedRouteProps) => {
   //   const { user, isAuthChecked, loading } = useSelector((state) => state.user);
   const user = null;
   const isAuthChecked = false;
@@ -19,7 +21,7 @@ export const ProtectedRoute = ({ children, type }: ProtectedRouteProps) => {
   const from = location.state?.from || '/';
 
   if (!isAuthChecked || loading) {
-    return <Preloader />;
+    return <SkeletonUI />;
   }
 
   if (type === 'auth' && !user) {

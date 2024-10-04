@@ -4,8 +4,8 @@ export interface TUsersState {}
 
 export const initialState: TUsersState = {};
 
-const usersSlice = createSlice({
-  name: '',
+export const usersSlice = createSlice({
+  name: 'users',
   initialState,
   reducers: {},
   selectors: {}
