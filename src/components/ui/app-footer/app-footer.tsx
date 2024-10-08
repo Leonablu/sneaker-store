@@ -4,7 +4,7 @@ import { Logo } from '../../ui-kit/logo/logo';
 import { SocialsUI } from '../socials';
 import { ContactsUI } from '..';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
-import { ButtonNavigation } from '../../ui-kit/Navigation/icon-button';
+import { ButtonNavigation } from '../../ui-kit/navigation/icon-button';
 import { SearchComponent } from '../../ui-kit/search';
 
 export const AppFooterUI: FC = memo(() => {

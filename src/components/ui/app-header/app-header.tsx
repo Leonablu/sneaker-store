@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 import styles from './app-header.module.scss';
 import { ContactsUI } from '..';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
-import { ButtonNavigation } from '../../ui-kit/Navigation/icon-button';
+import { ButtonNavigation } from '../../ui-kit/navigation/icon-button';
 import { Logo } from '../../ui-kit/logo/logo';
 import { SearchComponent } from '../../ui-kit/search';
 
