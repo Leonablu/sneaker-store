@@ -4,6 +4,7 @@
   background-color: $dark-accent-color;
   height: 44px;
   width: 44px;
+
   &:hover {
     background: rgb(127 127 127);
   }
@@ -11,6 +12,7 @@
 
 .buttonNavFooter {
   background-color: $text-color;
+
   &:hover {
     background: rgb(127 127 127);
   }

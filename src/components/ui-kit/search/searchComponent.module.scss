@@ -1,21 +1,22 @@
 @import '../../../styles/variables';
 
 .search_container {
-  display: flex;
-  width: 350px;
-  height: 44px;
   border-radius: 20px;
-  box-shadow: 5px 2px 30px 0px rgba(41, 41, 45, 0.1) inset;
+  box-shadow: 5px 2px 30px 0 rgb(41 41 45 / 0.1) inset;
+  display: flex;
+  height: 44px;
+  width: 350px;
+
   &_rectangle {
-    border-radius: 0px 20px 20px 0px;
-    width: 95px;
+    border-radius: 0 20px 20px 0;
     height: 44px;
+    width: 95px;
   } 
 }
 
 .search_icon {
-  width: 44px;
+  color: $main-color;
   height: 44px;
   padding: 2px 0 0 30px;
-  color: $main-color;
+  width: 44px;
 }

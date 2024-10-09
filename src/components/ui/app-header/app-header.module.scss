@@ -1,23 +1,25 @@
 @import '../../../styles/variables';
 
 .grid_container {
-  margin-inline: 165px;
-  min-height: 175px;
   display: grid;
+  gap: 44px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 95px 44px;
-  gap: 44px;
+  margin-inline: 165px;
+  min-height: 175px;
 
 }
 
 .link {
   color: $text-color;
-  transition: color 0.3s ease;
   font-size: $link-font-size;
+  transition: color 0.3s ease;
+
   &:hover {
     color: $hover;
   }
 }
+
 .link_active {
   color: $accent-color;
 }
@@ -28,23 +30,26 @@
 }
 
 .running {
-  display: flex;
   align-items: center;
   background-color: $dark-accent-color;
+  display: flex;
   height: 40px;
-  overflow: hidden; // не дает появляться сайдбару
-  width: 100%;
   margin-block-end: 23px;
+  overflow: hidden; // не дает появляться сайдбару
   user-select: none;
+  width: 100%;
+
   &_items {
-    display: flex;
-    justify-content: space-around;
-    flex-shrink: 0;
-    min-width: 100%;
     animation: scroll 10s linear infinite;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    min-width: 100%;
+
     &_line {
       color: $main-color;
       font-size: 29px;
+
       &_sale {
         color: $accent-color;
       }
@@ -56,6 +61,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-100%);
   }

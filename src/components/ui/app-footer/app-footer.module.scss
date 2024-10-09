@@ -3,13 +3,15 @@
 .footer {
   background-color: $dark-accent-color;
 }
+
 .grid_container {
   display: grid;
+  gap: 62px;
   grid-template-columns: min-content min-content 1fr min-content;
   margin-inline: 165px;
-  padding-block: 46px 62px;
   min-height: 298px;
-  gap: 62px;
+  padding-block: 46px 62px;
+
   > * {
     &:nth-child(2n) {
       padding-block-end: 15px;
@@ -20,12 +22,14 @@
 .link {
   color: $disabled;
   font-family: $main-font;
-  transition: color 0.3s ease;
   font-size: 14px;
+  transition: color 0.3s ease;
+
   &:hover {
     color: $main-color;
   }
 }
+
 .link_active {
   color: $main-color;
 }
