@@ -10,7 +10,6 @@ import {
   TUpdatePost,
   TUserUpdate
 } from '../types';
-import { deleteCookie, getCookie, setCookie } from './cookie';
 import {
   TAuthResponse,
   TCategoriesResponse,
@@ -38,9 +37,8 @@ const checkResponse = async <T>(response: Response): Promise<T> => {
   }
 };
 
-const setTokens = (accessToken: string, refreshToken: string): void => {
+const setTokens = (accessToken: string): void => {
   localStorage.setItem('accessToken', accessToken);
-  setCookie('refreshToken', refreshToken);
 };
 // Получение accessToken из localStorage
 const getAccessToken = (): string | null => localStorage.getItem('accessToken');
@@ -48,7 +46,6 @@ const getAccessToken = (): string | null => localStorage.getItem('accessToken');
 // Удаление токенов (очистка localStorage и куков)
 const clearTokens = (): void => {
   localStorage.removeItem('accessToken');
-  deleteCookie('refreshToken');
 };
 
 // Функция для обновления токенов
@@ -70,22 +67,15 @@ export async function refreshTokens() {
 
     if (data.accessToken) {
       localStorage.setItem('accessToken', data.accessToken);
+      console.log('accessToken успешно обновлен:', data.accessToken);
     }
-
-    const refreshToken = getCookie('refreshToken');
-    if (!refreshToken) {
-      throw new Error('refreshToken не был обновлен в cookies');
-    }
-
-    console.log('refreshToken успешно обновлен:', refreshToken);
 
     return data;
   } catch (error) {
     console.error('Ошибка при обновлении токенов:', error);
+    throw error;
   }
 }
-const refreshToken = getCookie('refreshToken');
-console.log('Полученный refreshToken из cookies:', refreshToken);
 
 // Регистрация пользователя
 export const registerUser = async (
@@ -94,6 +84,7 @@ export const registerUser = async (
   const response = await fetch(`${API_URL}/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    credentials: 'include',
     body: JSON.stringify(data)
   });
 
@@ -105,14 +96,12 @@ export const loginUser = async (data: TLoginData): Promise<TAuthResponse> => {
   const response = await fetch(`${API_URL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
     body: JSON.stringify(data)
   });
 
   const loginData = await checkResponse<TAuthResponse>(response);
-
-  // Установка токенов после успешной авторизации
-  setTokens(loginData.accessToken, loginData.refreshToken);
-
+  setTokens(loginData.accessToken);
   return loginData;
 };
 
