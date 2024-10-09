@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.list_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  &_item {
+    gap: 10px;
+    padding: 0;
+  }
+}
+
+.link_contact {
+  font-style: normal;
+  font-family: $main-font;
+  font-size: $contacts-font-size;
+}
