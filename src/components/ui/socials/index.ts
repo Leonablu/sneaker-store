@@ -1,1 +1,0 @@
-export { SocialsUI } from './socials';

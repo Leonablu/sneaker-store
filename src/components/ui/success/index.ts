@@ -1,1 +1,0 @@
-export { SuccessUI } from './success';

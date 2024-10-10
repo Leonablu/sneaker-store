@@ -1,1 +1,0 @@
-export { PasswordUI } from './password';
