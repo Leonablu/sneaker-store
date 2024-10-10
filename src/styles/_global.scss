@@ -1,5 +1,30 @@
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700..900&family=Ruda&display=swap';
 
 body {
+  box-sizing: border-box;
+  font-family: $main-font;
+  margin: 0;
+}
+
+
+a,
+input {
   font-family: $main-font;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  font-family: $header-font;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+

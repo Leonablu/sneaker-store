@@ -1,1 +1,0 @@
-export { CatalogUI } from './catalog';

@@ -1,28 +1,43 @@
 import { FC } from 'react';
 import styles from './searchComponent.module.scss';
-// поисковая строка
+import { IconButton, InputBase, Paper } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
-export const SearchComponent: FC = () => (
+// поисковая строка
+type SerchColorProps = {
+  colorProps: boolean;
+};
+export const SearchComponent: FC<SerchColorProps> = ({ colorProps }) => (
   <>
-    {/* <Paper
-        component='form'
+    <Paper
+      component='form'
+      className={styles.search_container}
+      sx={{
+        backgroundColor: colorProps
+          ? 'rgb(255 255 255 / 1)'
+          : 'rgba(179, 192, 210, 0.2)'
+      }}
+    >
+      <InputBase
         sx={{
-          p: '11px 4px',
-          display: 'flex',
-          alignItems: 'center',
-          width: 350,
-          borderRadius: '20px',
-          boxShadow: '5px 2px 30px 0px rgba(41, 41, 45, 0.1) inset'
+          ml: 5,
+          flex: 1,
+          fontSize: '18px',
+          color: colorProps ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'
+        }}
+        placeholder='Поиск'
+        inputProps={{ 'aria-label': 'search product' }}
+      />
+      <Paper
+        className={styles.search_container_rectangle}
+        sx={{
+          backgroundColor: colorProps
+            ? 'rgba(41, 41, 45, 1)'
+            : 'rgba(25, 25, 25, 1)'
         }}
       >
-        <InputBase
-          sx={{ ml: 5, flex: 1, fontSize: '18px' }}
-          placeholder='Поиск'
-          inputProps={{ 'aria-label': 'search product' }}
-        />
-        <IconButton type='button' sx={{ p: '10px' }} aria-label='search'>
-          <SearchIcon />
-        </IconButton>
-      </Paper> */}
+        <SearchIcon className={styles.search_icon} viewBox='0 0 28 28' />
+      </Paper>
+    </Paper>
   </>
 );

@@ -17,13 +17,15 @@ $contacts-font-size: clamp(
   1.125rem
 ); //c 8px до 18px
 
-$main-font: 'Montserrat', sans-serif;
-$text-font: 'Ruda', sans-serif;
+
+$main-font: 'Ruda', sans-serif;
+$header-font: 'Montserrat', sans-serif;
 $text-color: rgb(0 0 0 / 1);
 $text-accent-color: rgb(0 44 106 / 1);
 
 $main-color: rgb(255 255 255 / 1);
 $accent-color: rgb(255 24 24 / 1);
+$dark-accent-color: rgb(41 41 45 / 1);
 $hover: rgb(255 66 24 / 1);
 $disabled: rgb(179 192 210 / 1);
 $shadow-button: 0 15px 30px 0 rgb(227 47 31 / 0.15);

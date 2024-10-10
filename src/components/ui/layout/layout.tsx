@@ -2,11 +2,12 @@ import { FC, memo } from 'react';
 import { AppHeaderUI } from '../app-header/app-header';
 import { AppFooterUI } from '..';
 import { TLayoutUIProps } from './type';
+import styles from './layout.module.scss';
 
 export const LayoutUI: FC<TLayoutUIProps> = memo(({ children }) => (
   <>
     <AppHeaderUI />
-    {children}
+    <div className={styles.main}>{children}</div>
     <AppFooterUI />
   </>
 ));
