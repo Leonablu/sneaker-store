@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.list_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  &_item {
+    gap: 10px;
+    padding: 0;
+  }
+}
+
+.link_contact {
+  font-style: normal;
+  font-family: $main-font;
+  font-size: $contacts-font-size;
+  text-decoration: underline 0.08em rgba(255, 255, 255, 0);
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 300ms;
+  &:hover{
+    text-decoration-color: inherit;
+  }
+}
+

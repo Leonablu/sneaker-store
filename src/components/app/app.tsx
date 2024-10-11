@@ -24,11 +24,9 @@ const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const background = location.state?.background;
-  // чтобы стили в проекте были выше стилей из библиотеки
   return (
     <StyledEngineProvider injectFirst>
       <div className={styles.app}>
-        <h1>Привет, это магазин кроссовок</h1>
         <Layout>
           <Routes location={background || location}>
             <Route path='/' element={<MainPage />} />

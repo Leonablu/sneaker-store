@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+.iconButton {
+  transition: background-color 300ms;
+  &:hover {
+    background: rgb(127 127 127);
+  }
+}
+
+.buttonNavHeader {
+  background-color: $dark-accent-color;
+}
+
+.buttonNavFooter {
+  background-color: $text-color;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

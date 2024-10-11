@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from './ProfileMenuNavigation.module.scss';
+import styles from './profile-menu-navigation.module.scss';
 
 // плашки с кроссовками на главной странице
 

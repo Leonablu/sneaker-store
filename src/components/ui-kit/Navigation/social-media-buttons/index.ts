@@ -1,1 +1,0 @@
-export { socialMediaButtons } from './socialMediaButtons';
