@@ -10,3 +10,4 @@ export * from './product-page';
 export * from './profile-page';
 export * from './register-page';
 export * from './faq-page';
+export * from './not-found-404';

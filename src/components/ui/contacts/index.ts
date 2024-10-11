@@ -1,1 +1,0 @@
-export { ContactsUI } from './contacts';

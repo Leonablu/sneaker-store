@@ -5,6 +5,7 @@ export * from './basket-item';
 export * from './blog';
 export * from './blog-card';
 export * from './blog-item';
+export * from './brands';
 export * from './catalog';
 export * from './catalog-params';
 // export * from './checkbox-group';

@@ -14,10 +14,10 @@ import {
   MainPage,
   ProductPage,
   ProfilePage,
-  RegisterPage
+  RegisterPage,
+  NotFound404
 } from '../../pages';
 import { ProtectedRoute } from '../protected-route';
-import { NotFound404 } from '../ui/pages';
 import { Layout } from '../layout';
 
 const App = () => {
