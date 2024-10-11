@@ -1,12 +1,12 @@
 export type TUser = {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  // createdAt: string;
+  // updatedAt: string;
   email: string;
-  password: string;
-  provider: string | null;
-  isAdmin: boolean;
-  isBlocked: boolean;
+  password?: string;
+  // provider: string | null;
+  // isAdmin: boolean;
+  // isBlocked: boolean;
   name: string;
   avatarPath: string;
   about: string;
@@ -94,11 +94,13 @@ export type TPost = {
   body: string;
   favoritesCount: number;
   images: string;
-  tags: string[];
-  isPublished: boolean;
-  products: TProduct;
-  user: TUser;
+  tags?: string[];
+  isPublished?: boolean;
+  comments?: [];
+  favorites?: [];
+  author: TUser;
 };
+
 export type TFavoritePost = {
   message: string;
   favorites: {
