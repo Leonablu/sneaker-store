@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { BlogCard } from '../../components';
 import styles from './blog-page.module.scss';
 import { SubscriptionUI } from '../../components/ui';
-import classnames from 'classnames';
+import { SubmitButton } from '../../components/ui-kit';
 
 export const BlogPage: FC = () => {
   // посты достанем из стора
@@ -211,16 +211,18 @@ export const BlogPage: FC = () => {
 
   return (
     <div className={styles.content}>
-      <div className={classnames(styles.column, styles.column_first)}>
+      <div className={(styles.column, styles.column_first)}>
         {posts.slice(3).map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
       </div>
-      <div className={classnames(styles.column, styles.column_second)}>
-        <SubscriptionUI></SubscriptionUI>
+
+      <div className={(styles.column, styles.column_second)}>
+        <SubscriptionUI />
         {posts.slice(-3).map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
+        <SubmitButton />
       </div>
     </div>
   );
