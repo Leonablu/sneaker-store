@@ -7,11 +7,11 @@ import Link from '@mui/material/Link';
 import styles from './contacts.module.scss';
 
 type ListContactsProps = {
-  iconAndTextColor: boolean;
+  isComponentInHeader: boolean;
 };
 
 export const ListContacts: FC<ListContactsProps> = memo(
-  ({ iconAndTextColor }) => (
+  ({ isComponentInHeader }) => (
     <>
       <address>
         <List className={styles.list_contacts}>
@@ -19,7 +19,7 @@ export const ListContacts: FC<ListContactsProps> = memo(
             <CallIcon
               viewBox='0 0 20 22'
               sx={{
-                color: iconAndTextColor
+                color: isComponentInHeader
                   ? 'rgb(0 44 106 / 1)'
                   : 'rgba(179, 192, 210, 1)',
                 width: '20px',
@@ -30,9 +30,9 @@ export const ListContacts: FC<ListContactsProps> = memo(
               className={styles.link_contact}
               href='tel:+1234567890'
               rel='nofollow'
-              underline='hover'
+              underline='none'
               sx={{
-                color: iconAndTextColor
+                color: isComponentInHeader
                   ? 'rgba(41, 41, 45, 1)'
                   : 'rgba(179, 192, 210, 1)'
               }}
@@ -44,7 +44,7 @@ export const ListContacts: FC<ListContactsProps> = memo(
             <EmailIcon
               viewBox='0 7 22 10'
               sx={{
-                color: iconAndTextColor
+                color: isComponentInHeader
                   ? 'rgb(0 44 106 / 1)'
                   : 'rgba(179, 192, 210, 1)',
                 width: '20px',
@@ -55,9 +55,9 @@ export const ListContacts: FC<ListContactsProps> = memo(
               className={styles.link_contact}
               href='mailto:example@example.com'
               rel='nofollow'
-              underline='hover'
+              underline='none'
               sx={{
-                color: iconAndTextColor
+                color: isComponentInHeader
                   ? 'rgba(41, 41, 45, 1)'
                   : 'rgba(179, 192, 210, 1)'
               }}

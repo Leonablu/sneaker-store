@@ -1,1 +1,1 @@
-export { ProfileMenuNavigation } from './profileMenuNavigation';
+export { ProfileMenuNavigation } from './profile-menu-navigation';

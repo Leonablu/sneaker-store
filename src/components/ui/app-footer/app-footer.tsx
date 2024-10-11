@@ -2,11 +2,15 @@ import { FC, memo } from 'react';
 import styles from './app-footer.module.scss';
 import { Logo } from '../../ui-kit/logo/logo';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
-import { ButtonNavigation } from '../../ui-kit/navigation/icon-button';
+
 import { SearchComponent } from '../../ui-kit/search';
 import Grid from '@mui/material/Grid2';
 import { ListContacts } from '../../ui-kit/contacts/contacts';
-import { SocialMediaButtons } from '../../ui-kit/navigation/social-media-buttons';
+import { InstagramButton } from '../../ui-kit/navigation/social-media-buttons/instagram';
+import { WhatsappButton } from '../../ui-kit/navigation/social-media-buttons/whatsapp';
+import { VkButton } from '../../ui-kit/navigation/social-media-buttons/vk';
+import { OrderButton } from '../../ui-kit/navigation/icon-button/orders';
+import { ProfileButton } from '../../ui-kit/navigation/icon-button/profile';
 
 export const AppFooterUI: FC = memo(() => {
   const setActive = ({ isActive }: NavLinkRenderProps) =>
@@ -24,8 +28,12 @@ export const AppFooterUI: FC = memo(() => {
             gap='15px'
             justifyContent='end'
           >
-            <SocialMediaButtons />
-            <ListContacts iconAndTextColor={false} />
+            <Grid display='flex' gap='30px'>
+              <InstagramButton />
+              <VkButton />
+              <WhatsappButton />
+            </Grid>
+            <ListContacts isComponentInHeader={false} />
           </Grid>
           <Grid
             display='flex'
@@ -57,17 +65,16 @@ export const AppFooterUI: FC = memo(() => {
             alignItems='end'
             gap='35px'
           >
-            <ButtonNavigation isheader={false} />
-            <SearchComponent colorProps={false} />
+            <Grid display='flex' gap='20px'>
+              <OrderButton isheader={false} counter={2} />
+              <ProfileButton isheader={false} />
+            </Grid>
+
+            <SearchComponent isComponentInHeader={false} />
           </Grid>
         </Grid>
       </nav>
     </footer>
   );
 });
-{
-  /* <ButtonNavigation> </ButtonNavigation> // из ui-kit
-<SearchComponent></SearchComponent>// из ui-kit
-<socialMediaButtons></socialMediaButtons> // из ui-kit
-<List></List> // из matrial ui для отображения доставка/гарантии */
-}
+
