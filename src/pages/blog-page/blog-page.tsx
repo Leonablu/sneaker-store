@@ -224,6 +224,7 @@ export const BlogPage: FC = () => {
         {posts.slice(2).map((post) => (
           <BlogCard post={post} key={post.id} />
         ))}
+        <SubmitButton />
       </div>
     </div>
   );
