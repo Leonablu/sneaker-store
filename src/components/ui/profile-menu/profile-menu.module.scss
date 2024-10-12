@@ -1,0 +1,65 @@
+@import '../../../styles/variables';
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'personal-data change-password'
+    'personal-data change-password'
+    'address contacts'
+    'address contacts';
+  margin-top: 110px;
+  margin-bottom: 60px;
+  margin-left: 45px;
+}
+
+.addressInputs {
+  display: grid;
+  grid-template-columns: repeat(3, 95px);
+  gap: 48px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding-top: 44px;
+}
+
+.profileInfoContainer {
+  margin: 50px;
+  color: $dark-accent-color;
+}
+
+.title {
+  margin-bottom: 23px;
+  color: $text-accent-color;
+  font-size: $link-font-size;
+  font-family: $header-font;
+}
+
+.titleContact,
+.titlePassword {
+  margin-bottom: 17px;
+  color: $text-accent-color;
+  font-size: $link-font-size;
+  font-family: $header-font;
+}
+
+.errorContainer {
+  position: relative;
+  margin-top: 4px;
+}
+
+.submitButtonCustom {
+  position: relative;
+  left: 45px;
+  width: 418px;
+  height: 91px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: $header-font;
+  font-size: $link-font-size;
+  background-color: $disabled;
+}
