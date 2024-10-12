@@ -1,1 +1,1 @@
-import { ListContacts } from './contacts';
+export { ListContacts } from './contacts';

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IconButton, Link } from '@mui/material';
-import viber from '../../../../assets//svg/instagram.svg';
+import viber from '../../../../../assets/svg/viber.svg';
 
 // иконки социальных сетей
 export const ViberButton: FC = () => (

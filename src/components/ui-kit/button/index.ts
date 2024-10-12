@@ -1,1 +1,1 @@
-export { SubmitButton } from './submitButton';
+export { SubmitButton } from './submit-button';

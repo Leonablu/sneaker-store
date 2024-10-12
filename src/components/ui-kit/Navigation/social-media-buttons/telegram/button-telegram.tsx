@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IconButton, Link } from '@mui/material';
-import telegram from '../../../../../assets/svg/telegram .svg';
+import telegram from '../../../../../assets/svg/telegram.svg';
 
 // иконки социальных сетей
 export const TelegramButton: FC = () => (

@@ -2,7 +2,7 @@
 
 .container {
   inline-size: clamp(20rem, 15.4167rem + 20.3704vw, 33.75rem);
-  block-size: clamp(8.8125rem, 3.8333rem + 22.1296vw, 23.75rem);
+  // block-size: 100%;
   background-color: $dark-accent-color;
   border-radius: 20px;
   box-shadow: 5px 20px 60px 0px #165cbf26;
@@ -21,12 +21,13 @@
 }
 
 .form {
-  block-size: 100%;
+  block-size: calc(100% - 50px - 2 * 29.26px);
   background-color: $main-color;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  padding: clamp(1.875rem, 1.0417rem + 3.7037vw, 4.375rem);
+  justify-content: center;
+  padding-inline: clamp(1.875rem, 1.0417rem + 3.7037vw, 4.375rem);
   gap: 20px;
 }
 

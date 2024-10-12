@@ -3,7 +3,7 @@ import { TPost } from '../../types';
 import { Link } from '@mui/material';
 import { BlogCardUI } from '../ui';
 
-export type TBlogCardProps = {
+type TBlogCardProps = {
   post: TPost;
 };
 
@@ -12,7 +12,7 @@ export const BlogCard: FC<TBlogCardProps> = ({ post }) => {
   return (
     <>
       <Link underline='none'>
-        <BlogCardUI post={post}></BlogCardUI>
+        <BlogCardUI post={post} />
       </Link>
     </>
   );

@@ -1,16 +1,17 @@
 import { FC, memo } from 'react';
-import styles from './app-footer.module.scss';
-import { Logo } from '../../ui-kit/logo/logo';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
-
-import { SearchComponent } from '../../ui-kit/search';
 import Grid from '@mui/material/Grid2';
-import { ListContacts } from '../../ui-kit/contacts/contacts';
-import { InstagramButton } from '../../ui-kit/navigation/social-media-buttons/instagram';
-import { WhatsappButton } from '../../ui-kit/navigation/social-media-buttons/whatsapp';
-import { VkButton } from '../../ui-kit/navigation/social-media-buttons/vk';
-import { OrderButton } from '../../ui-kit/navigation/icon-button/orders';
-import { ProfileButton } from '../../ui-kit/navigation/icon-button/profile';
+import {
+  ListContacts,
+  InstagramButton,
+  WhatsappButton,
+  VkButton,
+  OrderButton,
+  ProfileButton,
+  SearchComponent,
+  Logo
+} from '../../ui-kit';
+import styles from './app-footer.module.scss';
 
 export const AppFooterUI: FC = memo(() => {
   const setActive = ({ isActive }: NavLinkRenderProps) =>
@@ -77,4 +78,3 @@ export const AppFooterUI: FC = memo(() => {
     </footer>
   );
 });
-

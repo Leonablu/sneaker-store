@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import styles from './subscription.module.scss';
+import { SubmitButton } from '../../ui-kit';
 
 export const SubscriptionUI: FC = memo(() => (
   <div className={styles.container}>
@@ -13,8 +14,13 @@ export const SubscriptionUI: FC = memo(() => (
       }}
     >
       <input type='text' placeholder='Введите ваш email' />
-      <button type='submit'>Подписаться</button>
-      <a href='#' className={styles.link}>Политика конфиденциальности</a>
+      <SubmitButton
+        onClick={() => console.log('Вы подписались на рассылку!')}
+        text='Подписаться'
+      />
+      <a href='#' className={styles.link}>
+        Политика конфиденциальности
+      </a>
     </form>
   </div>
 ));
