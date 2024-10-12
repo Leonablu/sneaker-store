@@ -18,31 +18,45 @@ export const Carousel = ({
   cards: cardInfo[];
   visibleCount: number;
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [indexes, setIndexes] = useState({
+    firstIndex: 0,
+    lastIndex: visibleCount
+  });
   const [visibleImages, setVisibleImages] = useState(
     cards.slice(0, visibleCount)
   );
 
   const handleNext = () => {
-    const nextIndex = (currentIndex + 1) % cards.length;
-    const newVisibleImages = [...visibleImages.slice(1), cards[nextIndex]];
+    const newLastIndex =
+      indexes.lastIndex + 1 > cards.length - 1 ? 0 : indexes.lastIndex + 1;
+    const newFirstIndex =
+      indexes.firstIndex + 1 > cards.length - 1 ? 0 : indexes.firstIndex + 1;
+
+    visibleImages.shift();
+
+    const newVisibleImages = [...visibleImages, cards[newLastIndex]];
+
     setVisibleImages(newVisibleImages);
-    setCurrentIndex(nextIndex);
+    setIndexes({ firstIndex: newFirstIndex, lastIndex: newLastIndex });
   };
 
   const handlePrev = () => {
-    const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
-    const newVisibleImages = [
-      cards[prevIndex],
-      ...visibleImages.slice(0, visibleCount - 1)
-    ];
+    const newLastIndex =
+      indexes.lastIndex - 1 < 0 ? cards.length - 1 : indexes.lastIndex - 1;
+    const newFirstIndex =
+      indexes.firstIndex - 1 < 0 ? cards.length - 1 : indexes.firstIndex - 1;
+
+    visibleImages.pop();
+
+    const newVisibleImages = [cards[newFirstIndex], ...visibleImages];
+
     setVisibleImages(newVisibleImages);
-    setCurrentIndex(prevIndex);
+    setIndexes({ firstIndex: newFirstIndex, lastIndex: newLastIndex });
   };
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <IconButton onClick={handleNext} aria-label='navigate left'>
+        <IconButton onClick={handlePrev} aria-label='navigate left'>
           <img src={arrowLeft} alt='arrow left' />
         </IconButton>
         <Grid container className={styles.container}>
@@ -56,7 +70,7 @@ export const Carousel = ({
             </Grid>
           ))}
         </Grid>
-        <IconButton onClick={handlePrev} aria-label='navigate right'>
+        <IconButton onClick={handleNext} aria-label='navigate right'>
           <img src={arrowRight} alt='arrow right' />
         </IconButton>
       </Box>
