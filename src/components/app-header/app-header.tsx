@@ -1,4 +1,4 @@
 import { FC } from 'react';
-import { AppHeaderUI } from '../ui/app-header/app-header';
+import { AppHeaderUI } from '../ui';
 
 export const AppHeader: FC = () => <AppHeaderUI />;

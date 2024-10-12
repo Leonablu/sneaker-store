@@ -1,18 +1,29 @@
 @import '../../styles/variables';
 
 .content {
-  
   display: flex;
+  flex-direction: column;
   padding-block: 100px;
-  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
 }
 
-.column {
+.first_row {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
+.first_row_cards {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
 
-  &_second {
-    justify-content: flex-end;
-  }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  flex-wrap: wrap;
 }

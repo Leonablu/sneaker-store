@@ -1,13 +1,15 @@
 import { FC, memo } from 'react';
+import Grid from '@mui/material/Grid2';
 import styles from './app-header.module.scss';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
-import { Logo } from '../../ui-kit/logo/logo';
-import { SearchComponent } from '../../ui-kit/search';
-import { ListContacts } from '../../ui-kit/contacts/contacts';
-import Grid from '@mui/material/Grid2';
-import { OrderButton } from '../../ui-kit/navigation/icon-button/orders';
-import { ProfileButton } from '../../ui-kit/navigation/icon-button/profile';
-import { LikeButton } from '../../ui-kit/navigation/icon-button/likes';
+import {
+  Logo,
+  SearchComponent,
+  ListContacts,
+  OrderButton,
+  ProfileButton,
+  LikeButton
+} from '../../ui-kit';
 
 const RunningItem = () => (
   <span className={styles.running_items_line}>

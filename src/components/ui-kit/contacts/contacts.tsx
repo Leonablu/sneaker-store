@@ -1,4 +1,4 @@
-import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { ListItem } from '@mui/material';
 import { FC, memo } from 'react';
 import { List } from '@mui/material';
 import CallIcon from '@mui/icons-material/Call';

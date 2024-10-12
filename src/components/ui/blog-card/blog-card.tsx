@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import styles from './blog-card.module.scss';
-import { TBlogCardProps } from '../../blog-card/blog-card';
+import { TBlogCardProps } from './type';
 
 export const BlogCardUI: FC<TBlogCardProps> = memo(({ post }) => (
   <div className={styles.card}>
