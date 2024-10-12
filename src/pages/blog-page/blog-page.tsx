@@ -209,7 +209,7 @@ export const BlogPage: FC = () => {
   ];
 
   return (
-    <div className={styles.content}>
+    <main className={styles.content}>
       <div className={styles.first_row}>
         <div className={styles.first_row_cards}>
           {posts.slice(-2).map((post) => (
@@ -225,6 +225,6 @@ export const BlogPage: FC = () => {
           <BlogCard post={post} key={post.id} />
         ))}
       </div>
-    </div>
+    </main>
   );
 };

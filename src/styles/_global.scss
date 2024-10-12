@@ -1,5 +1,10 @@
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@700..900&family=Ruda&display=swap';
 
+main {
+  padding-block: 70px;
+  max-inline-size: 1100px;
+}
+
 body {
   box-sizing: border-box;
   font-family: $main-font;

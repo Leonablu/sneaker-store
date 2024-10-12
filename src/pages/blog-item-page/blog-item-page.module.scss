@@ -1,0 +1,83 @@
+@import '../../styles/variables';
+
+main {
+  padding-block: 70px;
+}
+
+.content {
+  color: $text-color;
+  max-inline-size: 1100;
+}
+
+.title {
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 78.02px;
+  color: $text-accent-color;
+  font-size: clamp(1.125rem, 0.1667rem + 4.2593vw, 4rem);
+  max-inline-size: clamp(13.875rem, 1.3125rem + 55.8333vw, 51.5625rem);
+}
+
+.svg path {
+  fill: $text-accent-color;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block-end: 40px;
+  text-align: end;
+}
+
+.views svg {
+    margin-inline-end: 10px;
+}
+
+.image {
+  border-radius: 20px;
+
+  &_big {
+    inline-size: 100%;
+  }
+
+  &_description {
+    inline-size: 300px;
+  }
+
+  &_last {
+    inline-size: 100%;
+    max-block-size: 400px;
+    object-fit: cover;
+    margin-block-end: 50px;
+  }
+
+//   &_decor {
+//     inline-size: 350px;
+//     max-block-size: 250px;
+//     object-fit: cover;
+//     position: absolute;
+//     inset: 280vh 80vw;
+//   }
+}
+
+.image_last::after {
+  display: block;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 1px solid red;
+}
+
+.description_block {
+  display: flex;
+  gap: 50px;
+  margin-block: 40px;
+}
+
+.description {
+  font-size: $link-font-size;
+  line-height: 29.21px;
+}
