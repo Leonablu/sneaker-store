@@ -14,6 +14,7 @@
   color: $text-color;
   font-size: $link-font-size;
   transition: color 0.3s ease;
+  font-family: $header-font;
 
   &:hover {
     color: $hover;
