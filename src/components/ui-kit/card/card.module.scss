@@ -1,0 +1,66 @@
+@import '../../../styles/variables';
+
+.card {
+  width: 255px;
+  height: 325px;
+  border-radius: 20px;
+  box-shadow: $shadow-card;
+  transition:
+    transform 0.3s ease,
+    height 0.3s ease;
+
+  &:hover {
+    transform: scale(1.12);
+    height: 425px;
+
+    .card_price {
+      color: $accent-color;
+      transition: color 0.3s ease;
+    }
+    .card_size {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      padding-inline: 22px;
+      justify-items: start;
+    }
+  }
+  &_size {
+    display: none;
+    &_icon {
+      padding: 0;
+      border: none;
+      font-size: 16px;
+      font-family: $main-font;
+      color: $text-accent-color;
+    }
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 22px 26px;
+    justify-content: space-between;
+    height: 155px;
+    flex-wrap: nowrap;
+  }
+  &_image {
+    background: no-repeat center / cover;
+  }
+  &_title {
+    font-family: $header-font;
+    color: $text-color;
+    font-size: $card-description-font-size;
+    text-transform: uppercase;
+  }
+  &_price {
+    font-family: $header-font;
+    color: $text-accent-color;
+    font-size: $card-price-font-size;
+  }
+  &_article {
+    color: $disabled;
+    font-size: 12px;
+    font-family: $main-font;
+  }
+}
