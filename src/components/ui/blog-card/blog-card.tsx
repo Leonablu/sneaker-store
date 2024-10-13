@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 import styles from './blog-card.module.scss';
 import { TBlogCardProps } from './type';
+import { formatNumber } from '../../../utils/utils';
 
 export const BlogCardUI: FC<TBlogCardProps> = memo(({ post }) => (
   <div className={styles.card}>
@@ -25,7 +26,7 @@ export const BlogCardUI: FC<TBlogCardProps> = memo(({ post }) => (
               fill='#B3C0D2'
             />
           </svg>
-          <span>{post.favoritesCount}</span>
+          <span>{formatNumber(post.favoritesCount)}</span>
         </div>
       </div>
     </div>
