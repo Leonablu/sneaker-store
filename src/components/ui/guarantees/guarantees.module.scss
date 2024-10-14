@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.container_advanteges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 43px 100px;
+    margin-inline: 35px;
+    margin-block-end: 80px;
+    font-family: $header-font;
+    color: $text-accent-color;
+    font-size: $benefit-font-size;
+    text-align: center;
+  
+    &_circle {
+      align-content: center;
+      border-radius: 80px;
+      height: 144px;
+      width: 144px;
+      &_image {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }

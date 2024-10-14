@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import styles from './drawerBlock.module.scss';
+import styles from './drawer-component.module.scss';
 
 export const drawerComponent: FC = memo(() => (
   <>
