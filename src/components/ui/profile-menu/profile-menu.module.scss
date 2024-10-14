@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
-.grid_container {
+.gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'personal-data change-password'
-    'personal-data change-password'
+    'personalData changePassword'
+    'personalData changePassword'
     'address contacts'
     'address contacts';
   margin-top: 110px;
@@ -22,7 +22,7 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  padding-top: 44px;
+  padding-top: 46px;
 }
 
 .profileInfoContainer {
@@ -31,18 +31,18 @@
 }
 
 .title {
-  margin-bottom: 23px;
+  margin-bottom: 20px;
   color: $text-accent-color;
-  font-size: $link-font-size;
   font-family: $header-font;
+  font-size: $link-font-size;
 }
 
 .titleContact,
 .titlePassword {
-  margin-bottom: 17px;
+  margin-bottom: 20px;
   color: $text-accent-color;
-  font-size: $link-font-size;
   font-family: $header-font;
+  font-size: $link-font-size;
 }
 
 .errorContainer {
@@ -62,4 +62,29 @@
   font-family: $header-font;
   font-size: $link-font-size;
   background-color: $disabled;
+}
+
+.textField {
+  width: 470px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #002c6a;
+}
+
+.lastNameField {
+  margin: 00px 70px 15px 0;
+}
+
+.middleNameField {
+  margin-bottom: 62px;
+}
+
+.houseField,
+.buildingField,
+.apartmentField {
+  width: 95px;
+  margin-bottom: 15px;
+}
+
+.indexField {
+  margin-bottom: 12px;
 }

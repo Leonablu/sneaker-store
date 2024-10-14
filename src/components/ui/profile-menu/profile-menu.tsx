@@ -8,30 +8,18 @@ import { User } from './type';
 export const ProfileMenuUI: FC<User> = memo((user) => (
   <div className={styles.profileInfoContainer}>
     <form>
-      <Grid className={styles.grid_container}>
-        <div style={{ gridArea: 'personal-data' }}>
+      <Grid className={styles.gridContainer}>
+        <div style={{ gridArea: 'personalData' }}>
           <h1 className={styles.title}>Личные данные</h1>
           <TextField
             fullWidth
             label='Фамилия'
             defaultValue={user.lastName}
             variant='standard'
+            className={`${styles.textField} ${styles.lastNameField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                margin: '10px 70px 13px 0',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -40,23 +28,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Имя'
             defaultValue={user.firstName}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '12px',
-                color: '#B3C0D2',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -70,23 +45,11 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
                 sx: { color: '#B3C0D2' }
               }
             }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '61px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
-              }
-            }}
+            className={`${styles.textField} ${styles.middleNameField}`}
           />
         </div>
 
-        <div style={{ gridArea: 'change-password' }}>
+        <div style={{ gridArea: 'changePassword' }}>
           <h1 className={styles.titlePassword}>Изменить пароль</h1>
           <div style={{ position: 'relative' }}>
             <TextField
@@ -95,28 +58,17 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
               defaultValue={user.oldPassword}
               variant='standard'
               placeholder='Введите пароль *'
+              className={`${styles.textField}`}
               slotProps={{
                 inputLabel: {
                   sx: { color: '#B3C0D2' }
                 }
               }}
               sx={{
-                '& .MuiInputBase-root': {
-                  borderBottom: '2px solid #002C6A',
-                  width: '470px',
-                  marginBottom: '14px',
-                  '&:before, &:after': {
-                    display: 'none'
-                  },
-                  '& input': {
-                    fontSize: '26px',
-                    color: '#000'
-                  },
-                  '& input::placeholder': {
-                    color: 'red',
-                    fontSize: '14px',
-                    textAlign: 'right'
-                  }
+                '& input::placeholder': {
+                  color: 'red',
+                  fontSize: '14px',
+                  textAlign: 'right'
                 }
               }}
             />
@@ -126,22 +78,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Новый пароль'
             defaultValue={user.newPassword}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '12px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -150,21 +90,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Повторите пароль'
             defaultValue={user.repeatPassword}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -177,22 +106,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Область'
             defaultValue={user.region}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '15px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -201,22 +118,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Город'
             defaultValue={user.city}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '10px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -225,22 +130,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Улица'
             defaultValue={user.street}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '13px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -250,22 +143,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
               label='Дом'
               defaultValue={user.house}
               variant='standard'
+              className={`${styles.textField} ${styles.houseField}`}
               slotProps={{
                 inputLabel: {
                   sx: { color: '#B3C0D2' }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  borderBottom: '2px solid #002C6A',
-                  width: '95px',
-                  marginBottom: '13px',
-                  '&:before, &:after': {
-                    display: 'none'
-                  },
-                  '& input': {
-                    fontSize: '26px'
-                  }
                 }
               }}
             />
@@ -274,22 +155,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
               label='Корпус'
               defaultValue={user.building}
               variant='standard'
+              className={`${styles.textField} ${styles.buildingField}`}
               slotProps={{
                 inputLabel: {
                   sx: { color: '#B3C0D2' }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  borderBottom: '2px solid #002C6A',
-                  width: '95px',
-                  marginBottom: '10px',
-                  '&:before, &:after': {
-                    display: 'none'
-                  },
-                  '& input': {
-                    fontSize: '26px'
-                  }
                 }
               }}
             />
@@ -299,22 +168,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
               label='Квартира'
               defaultValue={user.apartment}
               variant='standard'
+              className={`${styles.textField} ${styles.apartmentField}`}
               slotProps={{
                 inputLabel: {
                   sx: { color: '#B3C0D2' }
-                }
-              }}
-              sx={{
-                '& .MuiInputBase-root': {
-                  borderBottom: '2px solid #002C6A',
-                  width: '95px',
-                  marginBottom: '10px',
-                  '&:before, &:after': {
-                    display: 'none'
-                  },
-                  '& input': {
-                    fontSize: '26px'
-                  }
                 }
               }}
             />
@@ -324,22 +181,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Индекс'
             defaultValue={user.index}
             variant='standard'
+            className={`${styles.textField} ${styles.indexField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '10px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -350,22 +195,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Email'
             defaultValue={user.email}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '20px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />
@@ -374,22 +207,10 @@ export const ProfileMenuUI: FC<User> = memo((user) => (
             label='Телефон'
             defaultValue={user.phone}
             variant='standard'
+            className={`${styles.textField}`}
             slotProps={{
               inputLabel: {
                 sx: { color: '#B3C0D2' }
-              }
-            }}
-            sx={{
-              '& .MuiInputBase-root': {
-                borderBottom: '2px solid #002C6A',
-                width: '470px',
-                marginBottom: '10px',
-                '&:before, &:after': {
-                  display: 'none'
-                },
-                '& input': {
-                  fontSize: '26px'
-                }
               }
             }}
           />

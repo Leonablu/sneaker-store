@@ -25,3 +25,21 @@ p {
 a {
   text-decoration: none;
 }
+
+.MuiInputBase-input {
+  font-family: $main-font;
+  font-size: 24px;
+}
+
+.MuiInputLabel-root {
+  font-family: $main-font;
+}
+
+.MuiFormHelperText-root {
+  font-family: $main-font;
+}
+
+.MuiInputBase-root:before, 
+.MuiInputBase-root:after {
+  display: none;
+}
