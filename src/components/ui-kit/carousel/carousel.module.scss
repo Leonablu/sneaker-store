@@ -1,15 +1,18 @@
-.container {
-  justify-content: space-around;
-  align-items: center;
-  flex-grow: 1;
-  color: black;
-}
+@import '../../../styles/variables';
 
 .brand {
-  scale: 1;
-  min-width: 100%;
   &:hover {
     transform: scale(1.1);
     transition: transform 0.5s;
+  }
+}
+
+.splide {
+  height: 480px;
+  display: flex;
+  margin-inline: -70px;
+  margin-block-start: -30px;
+  &__list {
+    align-items: center;
   }
 }

@@ -1,6 +1,8 @@
 import { FC, memo } from 'react';
 import styles from './subscription.module.scss';
 import { SubmitButton } from '../../ui-kit';
+import { TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const SubscriptionUI: FC = memo(() => (
   <div className={styles.container}>
@@ -13,14 +15,20 @@ export const SubscriptionUI: FC = memo(() => (
         e.preventDefault();
       }}
     >
-      <input type='text' placeholder='Введите ваш email' />
+      <TextField
+        id='standard-basic'
+        label='email'
+        variant='standard'
+        placeholder='Введите Ваш email'
+        className={styles.input}
+      />
       <SubmitButton
         onClick={() => console.log('Вы подписались на рассылку!')}
         text='Подписаться'
       />
-      <a href='#' className={styles.link}>
+      <Link to='#' className={styles.link}>
         Политика конфиденциальности
-      </a>
+      </Link>
     </form>
   </div>
 ));
