@@ -8,9 +8,7 @@
     'personalData changePassword'
     'address contacts'
     'address contacts';
-  margin-top: 110px;
-  margin-bottom: 60px;
-  margin-left: 45px;
+    margin: 110px 0 60px 45px;
 }
 
 .addressInputs {
@@ -50,20 +48,6 @@
   margin-top: 4px;
 }
 
-.submitButtonCustom {
-  position: relative;
-  left: 45px;
-  width: 418px;
-  height: 91px;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  color: #fff;
-  font-family: $header-font;
-  font-size: $link-font-size;
-  background-color: $disabled;
-}
-
 .textField {
   width: 470px;
   margin-bottom: 15px;
@@ -87,4 +71,37 @@
 
 .indexField {
   margin-bottom: 12px;
+}
+
+.submitButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; 
+}
+
+.submitButtonCustom {
+  position: relative;
+  left: 45px;
+  width: 418px;
+  height: 91px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: $header-font;
+  font-size: $link-font-size;
+  background-color: $disabled;
+}
+
+.logoutButton {
+  margin-right: 200px;
+  width: 120px; 
+  height: 50px; 
+  border: none;
+  border-radius: 25px;
+  background-color: #ff4d4f;
+  color: white;
+  font-family: $header-font;
+  font-size: $link-font-size;
+  cursor: pointer;
 }
