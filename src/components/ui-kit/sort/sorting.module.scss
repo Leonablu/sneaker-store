@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.container_sort {
+  display: flex;
+  gap: 24px;
+  color: $disabled;
+  font-size: 18px;
+  align-items: center;
+
+}
+.form {
+  width: 165px;
+  box-shadow: $shadow-card;
+  border-radius: 20px;
+
+  &_select {
+    border-radius: 20px;
+    font-size: 16px;
+    height: 40px;
+  }
+  &_text {
+    font-style: normal;
+  }
+}
+

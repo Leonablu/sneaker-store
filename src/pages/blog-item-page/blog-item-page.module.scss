@@ -20,8 +20,8 @@ main {
   max-inline-size: clamp(13.875rem, 1.3125rem + 55.8333vw, 51.5625rem);
 }
 
-.svg path {
-  fill: $text-accent-color;
+.svg {
+  margin-inline-end: 10px;
 }
 
 .info {
@@ -30,11 +30,10 @@ main {
   gap: 20px;
   margin-block-end: 40px;
   text-align: end;
+  color: $text-accent-color
 }
 
-.views svg {
-    margin-inline-end: 10px;
-}
+
 
 .image {
   border-radius: 20px;

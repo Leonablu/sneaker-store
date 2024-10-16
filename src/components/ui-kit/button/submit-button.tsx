@@ -2,14 +2,23 @@ import { FC } from 'react';
 import styles from './submit-button.module.scss';
 import { Button } from '@mui/material';
 
-type TSubmitButtonProps = {
+interface SubmitButtonProps {
   text: string;
   onClick: () => void;
-};
+  className?: string;
+}
 
-export const SubmitButton: FC<TSubmitButtonProps> = ({ text, onClick }) => (
+export const SubmitButton: FC<SubmitButtonProps> = ({
+  text,
+  onClick,
+  className
+}) => (
   <>
-    <Button className={styles.submit} variant='contained' onClick={onClick}>
+    <Button
+      className={`${styles.submit} ${className || ''}`}
+      variant='contained'
+      onClick={onClick}
+    >
       {text}
     </Button>
   </>
