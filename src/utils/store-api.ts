@@ -37,13 +37,15 @@ const checkResponse = async <T>(response: Response): Promise<T> => {
   }
 };
 
+// Функция для установки токенов
 const setTokens = (accessToken: string): void => {
   localStorage.setItem('accessToken', accessToken);
 };
+
 // Получение accessToken из localStorage
 const getAccessToken = (): string | null => localStorage.getItem('accessToken');
 
-// Удаление токенов (очистка localStorage и куков)
+// Функция для удаления токенов
 const clearTokens = (): void => {
   localStorage.removeItem('accessToken');
 };
@@ -101,7 +103,9 @@ export const loginUser = async (data: TLoginData): Promise<TAuthResponse> => {
   });
 
   const loginData = await checkResponse<TAuthResponse>(response);
+
   setTokens(loginData.accessToken);
+
   return loginData;
 };
 
@@ -144,15 +148,16 @@ export const fetchWithRefresh = async <T>(
 };
 
 // Получение информации о текущем пользователе
-export const getUser = (): Promise<TUserResponse> =>
+export const getUserApi = (): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
+    method: 'GET',
     headers: {
       authorization: getAccessToken()
     } as HeadersInit
   });
 
 // Обновление информации о текущем пользователе
-export const updateUser = (
+export const updateUserApi = (
   user: Partial<TUserUpdate>
 ): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
