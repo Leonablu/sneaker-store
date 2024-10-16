@@ -1,19 +1,26 @@
 @import '../../../styles/variables';
 
-.card {
-  margin: 15px;
+.container_card {
+  position: relative;
   width: 255px;
   height: 325px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
   box-shadow: $shadow-card;
   transition:
     transform 0.3s ease,
     height 0.3s ease;
-
   &:hover {
     transform: scale(1.12);
     height: 425px;
-
+    z-index: 1;
     .card_price {
       color: $accent-color;
       transition: color 0.3s ease;

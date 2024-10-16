@@ -27,6 +27,7 @@ const options = {
   perMove: 1,
   arrows: true,
   pagination: false,
+  padding: { left: 25 },
   breakpoints: {
     360: {
       perPage: 2,
@@ -41,6 +42,7 @@ const brandsOptions = {
   perPage: 6,
   perMove: 1,
   pagination: false,
+
   breakpoints: {
     360: {
       perPage: 8,
@@ -59,7 +61,7 @@ export const Carousel: FC<TCarousel> = memo(({ type, cards }) => {
     <>
       {type === 'card' ? (
         <section aria-label='splide' className={`${styles.splide} splide`}>
-          <div className='splide__track'>
+          <div className={`${styles.splide__track} splide__track`}>
             <ul className={`${styles.splide__list} splide__list`}>
               {cards?.map((product) => (
                 <li className='splide__slide' key={product.id}>

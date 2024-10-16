@@ -29,69 +29,71 @@ export const CardProduct: FC<Partial<TProduct & CardActions>> = memo(
     };
 
     return (
-      <Card className={styles.card}>
-        <CardMedia
-          component='img'
-          className={styles.card_image}
-          src={images}
-          alt={name}
-        />
-        <Grid container className={styles.card_container}>
-          <CardContent sx={{ padding: 0 }}>
-            <Typography
-              className={styles.card_title}
-              color='text.secondary'
-              component='p'
-            >
-              {name}
-            </Typography>
-            <Typography component='p' className={styles.card_article}>
-              {slug}
-            </Typography>
-          </CardContent>
-          <Grid container justifyContent='space-between' alignItems='center'>
+      <div className={styles.container_card}>
+        <Card className={styles.card}>
+          <CardMedia
+            component='img'
+            className={styles.card_image}
+            src={images}
+            alt={name}
+          />
+          <Grid container className={styles.card_container}>
             <CardContent sx={{ padding: 0 }}>
-              <Typography component='p' className={styles.card_price}>
-                {price} ₽
+              <Typography
+                className={styles.card_title}
+                color='text.secondary'
+                component='p'
+              >
+                {name}
+              </Typography>
+              <Typography component='p' className={styles.card_article}>
+                {slug}
               </Typography>
             </CardContent>
+            <Grid container justifyContent='space-between' alignItems='center'>
+              <CardContent sx={{ padding: 0 }}>
+                <Typography component='p' className={styles.card_price}>
+                  {price} ₽
+                </Typography>
+              </CardContent>
 
-            <IconButton
-              aria-label='add to favorites'
-              sx={{ padding: 0 }}
-              onClick={onLikeClick}
-            >
-              <FavoriteIcon />
-            </IconButton>
+              <IconButton
+                aria-label='add to favorites'
+                sx={{ padding: 0 }}
+                onClick={onLikeClick}
+              >
+                <FavoriteIcon />
+              </IconButton>
+            </Grid>
           </Grid>
-        </Grid>
-        <ToggleButtonGroup
-          className={styles.card_size}
-          value={selected}
-          exclusive
-          onChange={handleChange}
-        >
-          {tags?.map((item, index) => (
-            <ToggleButton
-              value={index}
-              key={index}
-              className={styles.card_size_icon}
-              style={{
-                backgroundColor:
-                  selected === index
-                    ? ' rgba(0, 44, 106, 1)'
-                    : 'rgba(252, 252, 252, 1)',
-                color:
-                  selected === index
-                    ? 'rgba(252, 252, 252, 1)'
-                    : ' rgba(0, 44, 106, 1)'
-              }}
-            >
-              {`${item} EUR `}
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
-      </Card>
+          <ToggleButtonGroup
+            className={styles.card_size}
+            value={selected}
+            exclusive
+            onChange={handleChange}
+          >
+            {tags?.map((item, index) => (
+              <ToggleButton
+                value={index}
+                key={index}
+                className={styles.card_size_icon}
+                style={{
+                  backgroundColor:
+                    selected === index
+                      ? ' rgba(0, 44, 106, 1)'
+                      : 'rgba(252, 252, 252, 1)',
+                  color:
+                    selected === index
+                      ? 'rgba(252, 252, 252, 1)'
+                      : ' rgba(0, 44, 106, 1)'
+                }}
+              >
+                {`${item} EUR `}
+              </ToggleButton>
+            ))}
+          </ToggleButtonGroup>
+        </Card>
+      </div>
     );
   }
 );
