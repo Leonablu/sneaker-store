@@ -13,9 +13,9 @@ import {
   LoginPage,
   MainPage,
   ProductPage,
-  ProfilePage,
   RegisterPage,
-  NotFound404
+  NotFound404,
+  ProfilePage
 } from '../../pages';
 import { ProtectedRoute } from '../protected-route';
 import { Layout } from '../layout';
