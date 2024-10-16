@@ -1,6 +1,12 @@
 @import '../../styles/variables';
 
+.content {
+//   display: flex;
+//   justify-content: end;
+}
+
 .head {
+  justify-self: flex-end;
   width: 100%;
   font-family: $header-font;
   color: $text-accent-color;
@@ -11,9 +17,6 @@
 }
 
 .head span {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   width: 150px;
 }
-
-

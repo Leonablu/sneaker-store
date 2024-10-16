@@ -41,13 +41,13 @@ const App = () => {
             <Route
               path='/profile'
               element={
-                <ProtectedRoute type='auth'>
-                  <ProfilePage />
-                </ProtectedRoute>
+                // <ProtectedRoute type='auth'>
+                <ProfilePage />
+                // </ProtectedRoute>
               }
             />
             <Route
-              path='/profile/orders'
+              path='/orders'
               element={
                 // <ProtectedRoute type='auth'>
                 <ProfileOrdersPage />

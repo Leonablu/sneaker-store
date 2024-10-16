@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styles from './profile-orders-page.module.scss';
 import { UserOrdersListItem } from '../../components';
+import { ProfileMenuNavigation } from '../../components/ui-kit';
 
 export const ProfileOrdersPage: FC = () => {
   // заказы возьмем из стора
@@ -56,18 +57,21 @@ export const ProfileOrdersPage: FC = () => {
   ];
 
   return (
-    <main>
-      <div className={styles.head}>
-        <span>Номер заказа</span>
-        <span>Дата</span>
-        <span>Предметов</span>
-        <span>Сумма</span>
-        <span>Доставлено</span>
-        <span>Оплачено</span>
-      </div>
-      {orders.map((order) => (
-        <UserOrdersListItem key={order.id} order={order} />
-      ))}
-    </main>
+    <div className={styles.content}>
+      <ProfileMenuNavigation />
+      <main>
+        <div className={styles.head}>
+          <span>Номер заказа</span>
+          <span>Дата</span>
+          <span>Предметов</span>
+          <span>Сумма</span>
+          <span>Доставлено</span>
+          <span>Оплачено</span>
+        </div>
+        {orders.map((order) => (
+          <UserOrdersListItem key={order.id} order={order} />
+        ))}
+      </main>
+    </div>
   );
 };
