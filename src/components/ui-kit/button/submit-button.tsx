@@ -6,20 +6,21 @@ interface SubmitButtonProps {
   text: string;
   onClick: () => void;
   className?: string;
+  disabled?: boolean;
 }
 
 export const SubmitButton: FC<SubmitButtonProps> = ({
   text,
   onClick,
-  className
+  className,
+  disabled = false
 }) => (
-  <>
-    <Button
-      className={`${styles.submit} ${className || ''}`}
-      variant='contained'
-      onClick={onClick}
-    >
-      {text}
-    </Button>
-  </>
+  <Button
+    className={`${styles.submit} ${className || ''}`}
+    variant='contained'
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {text}
+  </Button>
 );

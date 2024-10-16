@@ -2,11 +2,11 @@ import { FC, memo } from 'react';
 import { SubmitButton } from '../../ui-kit';
 import { TextField } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import styles from './profile-menu.module.scss';
+import styles from './profile-info.module.scss';
 import { User } from './type';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export const ProfileMenuUI: FC<User> = memo((user) => {
+export const ProfileInfoUI: FC<User> = memo((user) => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from || '/login';

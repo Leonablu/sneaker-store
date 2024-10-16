@@ -13,3 +13,4 @@ export * from './aside';
 export * from './list-item';
 export * from './guarantees';
 export * from './layout';
+export * from './profile-info';
