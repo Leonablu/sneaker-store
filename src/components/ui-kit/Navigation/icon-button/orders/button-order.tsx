@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 // отображение иконок из header
 type headerProps = {
-  isheader: boolean;
-  counter: number;
+  isheader?: boolean;
+  counter?: number;
 };
 export const OrderButton: FC<headerProps> = ({ isheader, counter }) => (
   <>
