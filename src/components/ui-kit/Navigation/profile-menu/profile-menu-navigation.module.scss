@@ -1,0 +1,31 @@
+@import '../../../../styles/variables';
+
+.content {
+  position: absolute;
+  top: 320px;
+  left: -10px;
+  width: 150px;
+}
+
+.link {
+  color: $text-accent-color;
+  transition: color 0.3s ease;
+  display: block;
+  text-align: end;
+  border-radius: 20px;
+  padding: 20px;
+
+  &:hover {
+    color: $hover;
+    box-shadow: 5px 10px 30px 0px rgba(22, 92, 191, 0.1);
+    transition: box-shadow 500ms;
+  }
+}
+
+.link_active {
+  color: $accent-color;
+}
+
+.icon {
+  scale: 1.5;
+}

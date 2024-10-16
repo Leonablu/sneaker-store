@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.content {
+//   display: flex;
+//   justify-content: end;
+}
+
+.head {
+  justify-self: flex-end;
+  width: 100%;
+  font-family: $header-font;
+  color: $text-accent-color;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 20px;
+}
+
+.head span {
+  text-align: center;
+  width: 150px;
+}
