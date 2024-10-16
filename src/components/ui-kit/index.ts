@@ -7,3 +7,4 @@ export * from './logo';
 export * from './navigation';
 export * from './search';
 export * from './card';
+export * from './checkbox';

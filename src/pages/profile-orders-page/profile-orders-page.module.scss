@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.head {
+  width: 100%;
+  font-family: $header-font;
+  color: $text-accent-color;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 20px;
+}
+
+.head span {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}
+
+

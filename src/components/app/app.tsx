@@ -15,7 +15,8 @@ import {
   ProductPage,
   ProfilePage,
   RegisterPage,
-  NotFound404
+  NotFound404,
+  ProfileOrdersPage
 } from '../../pages';
 import { ProtectedRoute } from '../protected-route';
 import { Layout } from '../layout';
@@ -43,6 +44,14 @@ const App = () => {
                 <ProtectedRoute type='auth'>
                   <ProfilePage />
                 </ProtectedRoute>
+              }
+            />
+            <Route
+              path='/profile/orders'
+              element={
+                // <ProtectedRoute type='auth'>
+                <ProfileOrdersPage />
+                // </ProtectedRoute>
               }
             />
             <Route path='/registration' element={<RegisterPage />} />
