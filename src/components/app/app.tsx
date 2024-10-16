@@ -1,6 +1,6 @@
 import { StyledEngineProvider } from '@mui/material';
 import styles from './app.module.scss';
-import { AppFooter, AppHeader, Modal, Order } from '..';
+import { AppFooter, AppHeader, Modal, Order, ProtectedRoute } from '..';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import {
   BasketPage,
@@ -18,7 +18,6 @@ import {
   ProfileOrdersPage,
   ProfilePage
 } from '../../pages';
-import { ProtectedRoute } from '../protected-route';
 import { Layout } from '../layout';
 
 const App = () => {
@@ -41,9 +40,9 @@ const App = () => {
             <Route
               path='/profile'
               element={
-//                 <ProtectedRoute type='auth'>
-                <ProfilePage />
-                // </ProtectedRoute>
+                <ProtectedRoute onlyAuthorized>
+                  <ProfilePage />
+                </ProtectedRoute>
               }
             />
             <Route

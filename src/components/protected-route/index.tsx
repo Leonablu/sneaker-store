@@ -1,64 +1,38 @@
-import { FC, useState, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useSelector } from '../../services/store';
+import { getUserState } from '../../services/slices/users';
 import { SkeletonUI } from '../ui/skeleton';
 
-type TProtectedRouteType = 'auth' | 'unauth';
+export const isTokenPresent = () => {
+  const token = localStorage.getItem('accessToken');
+  return token !== null;
+};
 
 type ProtectedRouteProps = {
   children: React.ReactElement;
-  type: TProtectedRouteType;
+  onlyAuthorized?: boolean;
 };
 
-// Функция, которая имитирует проверку авторизации пользователя
-const authenticateUser = async (email: string, password: string) =>
-  new Promise<{ isAuthenticated: boolean }>((resolve) => {
-    setTimeout(() => {
-      if (email === 'leona@mail.ru' && password === '123') {
-        resolve({ isAuthenticated: true });
-      } else {
-        resolve({ isAuthenticated: false });
-      }
-    }, 1000);
-  });
-
-export const ProtectedRoute: FC<ProtectedRouteProps> = ({ children, type }) => {
-  const [user, setUser] = useState<null | {}>(null);
-  const [isAuthChecked, setIsAuthChecked] = useState(false);
-  const [loading, setLoading] = useState(true);
+export const ProtectedRoute = ({
+  children,
+  onlyAuthorized
+}: ProtectedRouteProps) => {
+  const { isAuthChecked } = useSelector(getUserState);
   const location = useLocation();
-  const from = location.state?.from || '/';
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      const email = 'leona@mail.ru';
-      const password = '123';
-
-      try {
-        const { isAuthenticated } = await authenticateUser(email, password);
-        if (isAuthenticated) {
-          setUser({});
-        }
-      } catch (error) {
-        console.error('Ошибка проверки авторизации', error);
-      } finally {
-        setIsAuthChecked(true);
-        setLoading(false);
-      }
-    };
-
-    checkAuth();
-  }, []);
-
-  if (!isAuthChecked || loading) {
+  if (!isAuthChecked) {
     return <SkeletonUI />;
   }
 
-  if (type === 'auth' && !user) {
-    return <Navigate to='/login' state={{ from: location }} />;
+  const tokenPresent = isTokenPresent();
+
+  if (onlyAuthorized && !tokenPresent) {
+    return <Navigate replace to='/login' state={{ from: location }} />;
   }
 
-  if (type === 'unauth' && user) {
-    return <Navigate to={from} />;
+  if (!onlyAuthorized && tokenPresent) {
+    const from = location.state?.from || { pathname: '/profile' };
+    return <Navigate replace to={from} />;
   }
 
   return children;
