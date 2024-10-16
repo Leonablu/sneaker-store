@@ -1,0 +1,40 @@
+@import '../../../styles//variables';
+
+.container_items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  row-gap: 67px;
+}
+
+.stack {
+  margin: auto;
+  margin-block: 60px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  color: $disabled;
+  font-size: 18px;
+  align-items: center;
+
+  &_button {
+    width: 40px;
+    height: 40px;
+    background-color: $main-color;
+    box-shadow: $shadow-card;
+    transition: background-color 300ms;
+    font-size: 14px;
+    color: $text-color;
+    &_active {
+      background: $accent-color;
+      color: $main-color;
+    }
+
+    &:hover {
+      background: $accent-color;
+      color: $main-color;
+    }
+  }
+}

@@ -36,3 +36,9 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+.input {
+  border-bottom: 2px solid $text-accent-color;
+  width: 410px;
+
+}

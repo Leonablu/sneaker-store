@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+// .container_mobile {
+//   background-color: yellow;
+//   width: 100px;
+// }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  color: $text-accent-color;
+  font-family: $header-font;
+  &_title {
+    font-size: $card-price-font-size;
+    font-family: $header-font;
+  }
+  &_checkbox {
+    width: fit-content;
+  }
+}
+
+.text {
+  font-family: $main-font;
+  font-size: 18px;
+}
+
+.text:checked {
+  font-weight: bold;
+}
