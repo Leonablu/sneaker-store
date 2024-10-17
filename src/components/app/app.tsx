@@ -20,11 +20,20 @@ import {
 } from '../../pages';
 import { ProtectedRoute } from '../protected-route';
 import { Layout } from '../layout';
+import { useDispatch } from '../../services/store';
+import { useEffect } from 'react';
+import { getProductsItem } from '../../services/slices/products/action';
 
 const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const background = location.state?.background;
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProductsItem());
+  }, [dispatch]);
+
   return (
     <StyledEngineProvider injectFirst>
       <div className={styles.app}>

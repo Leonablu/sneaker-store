@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, memo } from 'react';
 import styles from './sorting.module.scss';
 import {
   FormControl,
@@ -8,13 +8,12 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
-export const Sorting: FC = () => {
-  const [input, setInput] = useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setInput(event.target.value);
-  };
-
+type TSortingSelect = {
+  sorting: string;
+  onChange: (event: SelectChangeEvent) => void;
+};
+export const Sorting: FC<TSortingSelect> = memo(({ sorting, onChange }) => {
+  const a = 1;
   return (
     <>
       <Grid className={styles.container_sort}>
@@ -23,26 +22,29 @@ export const Sorting: FC = () => {
           <Select
             className={styles.form_select}
             id='demo-simple-select-autowidth'
-            value={input}
+            value={sorting}
             inputProps={{ 'aria-label': 'Without label' }}
             displayEmpty
-            onChange={handleChange}
+            onChange={onChange}
             label='Sort by'
             sx={{
               '.MuiOutlinedInput-notchedOutline': {
                 border: 'none'
+              },
+              '.MuiInputBase-input': {
+                fontSize: '16px'
               }
             }}
           >
-            <MenuItem value=''>
+            <MenuItem value={'default'}>
               <em className={styles.form_text}>по умолчанию</em>
             </MenuItem>
-            <MenuItem value={1}>новинки</MenuItem>
-            <MenuItem value={2}>по цене ↑</MenuItem>
-            <MenuItem value={3}>по цене ↓</MenuItem>
+            <MenuItem value={'create date'}>новинки</MenuItem>
+            <MenuItem value={'high price'}>по цене ↑</MenuItem>
+            <MenuItem value={'low price'}>по цене ↓</MenuItem>
           </Select>
         </FormControl>
       </Grid>
     </>
   );
-};
+});

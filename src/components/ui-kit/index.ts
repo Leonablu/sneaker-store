@@ -8,4 +8,5 @@ export * from './card';
 export * from './checkbox';
 export * from './carousel';
 export * from './sort';
+export * from './change-count-items'
 

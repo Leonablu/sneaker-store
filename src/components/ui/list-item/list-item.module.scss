@@ -12,29 +12,18 @@
   margin-block: 60px;
 }
 
-.container {
-  display: flex;
-  gap: 20px;
-  color: $disabled;
-  font-size: 18px;
-  align-items: center;
 
-  &_button {
-    width: 40px;
+.form {
+  width: 165px;
+  box-shadow: $shadow-card;
+  border-radius: 20px;
+
+  &_select {
+    border-radius: 20px;
+    font-size: 16px;
     height: 40px;
-    background-color: $main-color;
-    box-shadow: $shadow-card;
-    transition: background-color 300ms;
-    font-size: 14px;
-    color: $text-color;
-    &_active {
-      background: $accent-color;
-      color: $main-color;
-    }
-
-    &:hover {
-      background: $accent-color;
-      color: $main-color;
-    }
+  }
+  &_text {
+    font-style: normal;
   }
 }

@@ -46,7 +46,7 @@ export type TProduct = {
   stock: number;
   tags: string[];
   likes: TLike[];
-  categoryId: number;
+  category: TCategories;
   user: TUser;
 };
 

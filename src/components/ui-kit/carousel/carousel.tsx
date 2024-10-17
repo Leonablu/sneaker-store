@@ -9,7 +9,7 @@ import Splide from '@splidejs/splide';
 
 export type TCarousel = {
   type: 'card' | 'brand';
-  cards?: Partial<TProduct>[];
+  cards?: TProduct[];
 };
 
 const brands = [
@@ -53,15 +53,17 @@ const brandsOptions = {
 };
 export const Carousel: FC<TCarousel> = memo(({ type, cards }) => {
   useEffect(() => {
-    new Splide('.splide', options).mount();
-    new Splide('.splide_brand', brandsOptions).mount();
-  }, []);
+    if (cards && cards.length > 0) {
+      new Splide('.splide', options).mount();
+      new Splide('.splide_brand', brandsOptions).mount();
+    }
+  }, [cards]);
 
   return (
     <>
       {type === 'card' ? (
         <section aria-label='splide' className={`${styles.splide} splide`}>
-          <div className={`${styles.splide__track} splide__track`}>
+          <div className='splide__track'>
             <ul className={`${styles.splide__list} splide__list`}>
               {cards?.map((product) => (
                 <li className='splide__slide' key={product.id}>
