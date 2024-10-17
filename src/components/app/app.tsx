@@ -1,6 +1,6 @@
 import { StyledEngineProvider } from '@mui/material';
 import styles from './app.module.scss';
-import { AppFooter, AppHeader, Modal, Order } from '..';
+import { Modal, Order } from '..';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import {
   BasketPage,
@@ -18,7 +18,7 @@ import {
   ProfileOrdersPage,
   ProfilePage
 } from '../../pages';
-import { ProtectedRoute } from '../protected-route';
+// import { ProtectedRoute } from '../protected-route';
 import { Layout } from '../layout';
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';

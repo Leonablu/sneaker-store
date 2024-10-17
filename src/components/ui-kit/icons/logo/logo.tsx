@@ -1,18 +1,15 @@
 import { FC, memo } from 'react';
 import styles from './logo.module.scss';
+import { IconProps } from '../type';
 
-type LogoProps = {
-  widthLogo: string;
-  heightLogo: string;
-};
 
-export const Logo: FC<LogoProps> = memo(({ widthLogo, heightLogo }) => (
+export const Logo: FC<IconProps> = memo(({ widthIcon, heightIcon }) => (
   <>
     <div className={styles.logo_container}>
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width={widthLogo}
-        height={heightLogo}
+        width={widthIcon}
+        height={heightIcon}
         viewBox='0 0 95 95'
         fill='none'
       >

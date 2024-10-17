@@ -1,0 +1,107 @@
+@import '../../../styles/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 85px;
+  margin-block: 130px;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1 2;
+  gap: 40px;
+}
+
+.product_details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  color: $text-accent-color;
+  font-family: $header-font;
+  font-weight: 900;
+  font-size: $h1-font-size;
+}
+
+.accent {
+  position: absolute;
+  right: -165px;
+  top: -70px;
+  height: 535px;
+  width: 695px;
+  overflow: hidden;
+}
+
+.description {
+  color: $text-color;
+  font-size: $benefit-font-size;
+}
+
+.arrow_button {
+  position: absolute;
+  top: 200px;
+  right: -40px;
+  z-index: 3;
+  border: none;
+  color: $dark-accent-color;
+  font-size: 30px;
+  background-color: transparent;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  max-width: 550px;
+  max-height: 450px;
+}
+
+.image img {
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.thumbnails_container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 150px;
+}
+
+.thumbnail {
+  display: flex;
+  height: 86px;
+  width: 282px;
+  position: relative;
+  border-radius: 70px;
+  box-shadow: 5px 15px 32px rgb(22, 92, 191, 20%);
+  color: $text-color;
+  font-family: $header-font;
+  font-weight: 900;
+  font-size: $contacts-font-size;
+  background-color: $main-color;
+}
+
+.thumbnail_image {
+  max-height: 150px;
+  max-width: 180px;
+  margin-left: -100px;
+  position: absolute;
+  bottom: 1px;
+}
+
+.thumbnail_description {
+  margin-block: auto;
+  margin-left: 40%;
+}
+
+.thumbnail_button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -25px;
+  right: 10px;
+}
