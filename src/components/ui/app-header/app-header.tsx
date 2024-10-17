@@ -3,12 +3,12 @@ import Grid from '@mui/material/Grid2';
 import styles from './app-header.module.scss';
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
 import {
-  Logo,
   SearchComponent,
   ListContacts,
   OrderButton,
   ProfileButton,
-  LikeButton
+  LikeButton,
+  Logo
 } from '../../ui-kit';
 
 const RunningItem = () => (
@@ -40,7 +40,7 @@ export const AppHeaderUI: FC = memo(() => {
           </Grid>
           <Grid justifySelf='center' alignSelf='center'>
             <NavLink to='/' className={styles.link_logo}>
-              <Logo widthLogo='95px' heightLogo='95px' />
+              <Logo widthIcon='95px' heightIcon='95px' />
             </NavLink>
           </Grid>
           <Grid
