@@ -9,7 +9,7 @@ import {
   OrderButton,
   ProfileButton,
   SearchComponent,
-  Logo
+  Logo,
 } from '../../ui-kit';
 import styles from './app-footer.module.scss';
 
@@ -21,7 +21,7 @@ export const AppFooterUI: FC = memo(() => {
       <nav>
         <Grid container className={styles.grid_container}>
           <Grid>
-            <Logo heightLogo='190px' widthLogo='190px' />
+            <Logo heightIcon='190px' widthIcon='190px' />
           </Grid>
           <Grid
             display='flex'

@@ -4,3 +4,6 @@ export { default as nike } from './nike.png';
 export { default as porshe } from './porsche-design.png';
 export { default as puma } from './puma.png';
 export { default as reebok } from './reebok.png';
+export { default as yeezy } from './adidas-yeezy.png';
+export { default as nite } from './adidas-nite.png';
+export { default as air } from './nike-air.png';
