@@ -13,8 +13,6 @@ export const CloseIcon: FC = memo(() => (
         <circle cx='45' cy='30' r='25' fill='#29292D' />
       </g>
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
         d='M52.9545 23.6358L51.3636 22.0449L45 28.4086L38.6363 22.0449L37.0454 23.6358L43.409 29.9995L37.0454 36.3631L38.6363 37.954L45 31.5904L51.3636 37.954L52.9545 36.3631L46.5909 29.9995L52.9545 23.6358Z'
         fill='white'
       />
@@ -26,9 +24,8 @@ export const CloseIcon: FC = memo(() => (
           width='90'
           height='90'
           filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
         >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feFlood  result='BackgroundImageFix' />
           <feColorMatrix
             in='SourceAlpha'
             type='matrix'

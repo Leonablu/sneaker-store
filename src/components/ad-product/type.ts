@@ -1,4 +1,4 @@
-import { TProduct } from "../../../types";
+import { TProduct } from "../../types";
 
 export type TAdProductProps = {
   productList: TProduct[];

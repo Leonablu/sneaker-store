@@ -18,7 +18,7 @@ export const MainPage: FC = () => {
   }
   return (
     <>
-      <section className={styles.content}>
+      <main>
         <AdProduct productList={list} />
         <h2 className={styles.header}>Лучшие из лучших</h2>
         <Carousel type='card' cards={products} />
@@ -27,15 +27,15 @@ export const MainPage: FC = () => {
         <Blog />
         <h2 className={styles.header}>Бренды</h2>
         <Carousel type='brand' />
-      </section>
+      </main>
     </>
   );
 };
 
 const list = [
   {
-    name: 'ADIDAS YEEZY BOOST',
-    description: 'Городские кроссовки в ярком стиле 80-х',
+    name: 'ADIDAS \nYEEZY BOOST',
+    description: 'Городские кроссовки в \nярком стиле 80-x',
     images: images.yeezy,
     id: '1',
     price: 14,
@@ -71,8 +71,8 @@ const list = [
     }
   },
   {
-    name: 'ADIDAS NITE JOGGER',
-    description: 'Городские кроссовки в ярком стиле 80-х',
+    name: 'ADIDAS \nNITE JOGGER',
+    description: 'Городские кроссовки в \nярком стиле 80-x',
     images: images.nite,
     id: '2',
     price: 14,
@@ -108,8 +108,8 @@ const list = [
     }
   },
   {
-    name: 'NIKE AIR MAX',
-    description: 'Городские кроссовки в ярком стиле 80-х',
+    name: 'NIKE \nAIR MAX',
+    description: 'Городские кроссовки в \nярком стиле 80-x',
     images: images.air,
     id: '3',
     price: 14,

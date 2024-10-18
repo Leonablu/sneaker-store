@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { User } from '../../components/ui/profile-info/type';
-import { ProfileInfoUI } from '../../components/ui/';
+
+import { ProfileInfo } from '../../components';
+import { User } from '../../components/profile-info/type';
 
 const mockUser: User = {
   lastName: '',
@@ -22,6 +23,6 @@ const mockUser: User = {
 
 export const ProfilePage: FC = () => (
   <div>
-    <ProfileInfoUI {...mockUser} />
+    <ProfileInfo {...mockUser} />
   </div>
 );

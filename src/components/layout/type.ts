@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export type TLayoutProps = {
+export type TLayoutUIProps = {
   children?: ReactNode;
 };

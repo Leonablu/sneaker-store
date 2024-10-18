@@ -1,17 +1,15 @@
-@import '../../../styles/variables';
+@import '../../styles/variables';
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 85px;
-  margin-block: 130px;
+  margin-block: 60px 130px;
 }
 
 .banner {
   position: relative;
   display: flex;
-  flex-direction: row;
-  flex: 1 2;
   gap: 40px;
 }
 
@@ -19,6 +17,14 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 550px;
+  height: 420px;
+  justify-content: space-around;
+  white-space: pre-wrap;
+  align-items: start;
+}
+.button {
+  padding: 28px 53px;
 }
 
 .title {
@@ -26,6 +32,7 @@
   font-family: $header-font;
   font-weight: 900;
   font-size: $h1-font-size;
+
 }
 
 .accent {
@@ -54,10 +61,12 @@
 }
 
 .image {
-  position: relative;
+  position: absolute;
   z-index: 1;
   max-width: 550px;
   max-height: 450px;
+  right: 40px;
+  top: -40px;
 }
 
 .image img {
@@ -69,6 +78,7 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 150px;
+  cursor: pointer;
 }
 
 .thumbnail {

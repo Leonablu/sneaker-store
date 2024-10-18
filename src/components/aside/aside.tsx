@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
 import {
-  Box,
   Checkbox,
   FormControlLabel,
   FormGroup,
@@ -11,7 +10,7 @@ import Collapse from '@mui/material/Collapse';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid2';
 
-export const AsideUI: FC = () => {
+export const Aside: FC = () => {
   const matches = useMediaQuery('(min-width:360px)');
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => {
