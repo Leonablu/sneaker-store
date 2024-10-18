@@ -1,0 +1,68 @@
+@import '../../../styles/variables';
+
+.grid_container {
+  display: grid;
+  gap: 44px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 95px 44px;
+  margin-inline: 165px;
+  min-height: 175px;
+}
+
+.link {
+  color: $text-color;
+  font-size: $link-font-size;
+  transition: color 0.3s ease;
+  font-family: $header-font;
+
+  &:hover {
+    color: $hover;
+  }
+}
+
+.link_active {
+  color: $accent-color;
+}
+
+.link_logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.running {
+  align-items: center;
+  background-color: $dark-accent-color;
+  display: flex;
+  height: 40px;
+  margin-block-end: 23px;
+  overflow: hidden; // не дает появляться сайдбару
+  user-select: none;
+  width: 100%;
+
+  &_items {
+    animation: scroll 10s linear infinite;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    min-width: 100%;
+
+    &_line {
+      color: $main-color;
+      font-size: 29px;
+
+      &_sale {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

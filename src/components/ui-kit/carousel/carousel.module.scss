@@ -1,0 +1,20 @@
+@import '../../../styles/variables';
+
+.brand {
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+  }
+}
+
+.splide {
+  display: flex;
+  margin-inline: -70px;
+  height: 650px;
+  margin-block-start: -120px;
+
+
+  &__list {
+    align-items: center;
+  }
+}
