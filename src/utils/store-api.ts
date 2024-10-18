@@ -144,7 +144,7 @@ export const fetchWithRefresh = async <T>(
 };
 
 // Получение информации о текущем пользователе
-export const getUser = (): Promise<TUserResponse> =>
+export const getUserApi = (): Promise<TUserResponse> =>
   fetchWithRefresh<TUserResponse>(`${API_URL}/users/me`, {
     headers: {
       authorization: getAccessToken()

@@ -1,6 +1,6 @@
 import { StyledEngineProvider } from '@mui/material';
 import styles from './app.module.scss';
-import { Modal, Order } from '..';
+import { Layout, Modal, Order } from '..';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import {
   BasketPage,
@@ -19,10 +19,10 @@ import {
   ProfilePage
 } from '../../pages';
 // import { ProtectedRoute } from '../protected-route';
-import { Layout } from '../layout';
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { getProductsItem } from '../../services/slices/products/action';
+import { getUser } from '../../services/slices/user/action';
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const App = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getUser());
     dispatch(getProductsItem());
   }, [dispatch]);
 
@@ -50,7 +51,7 @@ const App = () => {
             <Route
               path='/profile'
               element={
-//                 <ProtectedRoute type='auth'>
+                //                 <ProtectedRoute type='auth'>
                 <ProfilePage />
                 // </ProtectedRoute>
               }

@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.formGrid {
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: $link-font-size;
+  margin-bottom: 1rem;
+  color: $text-accent-color;
+  font-family: $header-font;
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+}
+
+.linkContainer {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.question {
+  margin-left: 220px;
+  margin-bottom: 0.5rem;
+  color: #3f51b5;
+}
+
+.link {
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.textField {
+  width: 470px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #002c6a;
+}
+
+.submitButtonCustom {
+  position: relative;
+  width: 470px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: $header-font;
+  font-size: $link-font-size;
+  background-color: $accent-color;
+}

@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import styles from './catalog-shoes-page.module.scss';
 import { FC } from 'react';
 import Grid from '@mui/material/Grid2';
-import { TProduct } from '../../types';
-import { AsideUI, ListItem } from '../../components/ui';
+import { Aside, Catalog } from '../../components';
 
 export const CatalogShoesPage: FC = () => {
   const a = 1;
@@ -11,8 +9,8 @@ export const CatalogShoesPage: FC = () => {
     <>
       <main>
         <Grid container className={styles.container}>
-          <AsideUI />
-          <ListItem activeCategory={'sneaker'} />
+          <Aside />
+          <Catalog activeCategory={'sneaker'} />
         </Grid>
       </main>
     </>
