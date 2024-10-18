@@ -1,45 +1,23 @@
-import { FC, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { TextField } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid2';
 import styles from './register.module.scss';
 import { SubmitButton } from '../../components/ui-kit';
-
-
-// Моковая функция для имитации регистрации
-const mockRegister = async (email: string, password: string) => {
-  if (email && password) {
-    return { success: true };
-  } else {
-    throw new Error('Пожалуйста, заполните все поля');
-  }
-};
+import { useDispatch } from '../../services/store';
+import { getRegisterUser } from '../../services/slices/user/action';
 
 export const RegisterPage: FC = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorText, setErrorText] = useState('');
-  const navigate = useNavigate();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const dispatch = useDispatch();
 
-    setErrorText('');
-
-    if (!email || !password) {
-      setErrorText('Пожалуйста, заполните все поля');
-      return;
-    }
-
-    try {
-      const response = await mockRegister(email, password);
-      if (response.success) {
-        console.log('Успешная регистрация');
-        navigate('/login');
-      }
-    } catch (error) {
-      setErrorText((error as Error).message);
-    }
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    dispatch(getRegisterUser({ email, password, name }));
   };
 
   return (
@@ -53,6 +31,17 @@ export const RegisterPage: FC = () => {
         >
           <Grid>
             <h2 className={styles.title}>Регистрация</h2>
+          </Grid>
+          <Grid>
+            <TextField
+              fullWidth
+              label='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              variant='standard'
+              className={styles.textField}
+              error={Boolean(errorText)}
+            />
           </Grid>
           <Grid>
             <TextField

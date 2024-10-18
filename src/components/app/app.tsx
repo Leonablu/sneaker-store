@@ -22,7 +22,7 @@ import {
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { getProductsItem } from '../../services/slices/products/action';
-
+import { getUser } from '../../services/slices/user/action';
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const App = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getUser());
     dispatch(getProductsItem());
   }, [dispatch]);
 
@@ -50,7 +51,7 @@ const App = () => {
             <Route
               path='/profile'
               element={
-//                 <ProtectedRoute type='auth'>
+                //                 <ProtectedRoute type='auth'>
                 <ProfilePage />
                 // </ProtectedRoute>
               }

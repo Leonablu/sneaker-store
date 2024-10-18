@@ -1,49 +1,30 @@
-import { FC, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { TextField } from '@mui/material';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid2';
 import styles from './login.module.scss';
 import { SubmitButton } from '../../components/ui-kit';
-
-
-// Моковая функция для имитации логина
-const mockLogin = async (email: string, password: string) => {
-  if (email === 'leona@mail.ru' && password === '123') {
-    return { success: true };
-  } else {
-    throw new Error('Неверный email или пароль');
-  }
-};
+import { useDispatch, useSelector } from '../../services/store';
+import { getUserState } from '../../services/slices/user/user';
+import { getLoginUser } from '../../services/slices/user/action';
 
 export const LoginPage: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorText, setErrorText] = useState('');
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from || '/profile';
+  const { error, isAuthenticated } = useSelector(getUserState);
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    setErrorText('');
-
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
     if (!email || !password) {
-      setErrorText('Пожалуйста, заполните все поля');
       return;
     }
-
-    try {
-      const response = await mockLogin(email, password);
-      if (response.success) {
-        console.log('Успешный вход');
-        navigate(from);
-      }
-    } catch (error) {
-      setErrorText((error as Error).message);
-    }
+    dispatch(getLoginUser({ email, password }));
   };
 
+  if (isAuthenticated) {
+    return <Navigate to={'/profile'} />;
+  }
   return (
     <div className={styles.authContainer}>
       <form onSubmit={handleSubmit}>
@@ -64,7 +45,7 @@ export const LoginPage: FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               variant='standard'
               className={`${styles.textField}`}
-              error={Boolean(errorText)}
+              error={Boolean(error)}
             />
           </Grid>
           <Grid>
@@ -76,12 +57,12 @@ export const LoginPage: FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               variant='standard'
               className={`${styles.textField}`}
-              error={Boolean(errorText)}
+              error={Boolean(error)}
             />
           </Grid>
-          {errorText && (
+          {error && (
             <Grid>
-              <p className={styles.errorText}>{errorText}</p>
+              <p className={styles.errorText}>{error}</p>
             </Grid>
           )}
           <div className={styles.submitButtonContainer}>
